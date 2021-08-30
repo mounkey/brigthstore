@@ -1,0 +1,2 @@
+class Wear < ApplicationRecord
+end
