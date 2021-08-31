@@ -1,8 +1,8 @@
-class OrderitemsController < ApplicationController
+class OrderItemsController < ApplicationController
   before_action: set_orderitem, only [:destroy, :show, :update, :edit]
 
   def index
-    @orderitem = OrderItem.all
+    @order_items = OrderItem.all
   end
 
   def show
@@ -11,7 +11,7 @@ class OrderitemsController < ApplicationController
   private
   
   def set_orderitem
-    @orderitem = OrderItem.find(params[:id])
+    @order_item = OrderItem.find(params[:id])
   end
 
 end
