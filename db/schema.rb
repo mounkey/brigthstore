@@ -10,34 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_31_161956) do
+ActiveRecord::Schema.define(version: 2021_08_31_184844) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "order_items", force: :cascade do |t|
-    t.integer "wear_id"
-    t.integer "order_id"
-    t.integer "price"
-    t.integer "cantidad"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "orders", force: :cascade do |t|
-    t.integer "monto"
-    t.date "fecha"
-    t.string "metodopago"
-    t.string "address"
-    t.string "city"
-    t.string "state"
-    t.string "country"
+    t.text "nombre"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -57,15 +36,19 @@ ActiveRecord::Schema.define(version: 2021_08_31_161956) do
   end
 
   create_table "wears", force: :cascade do |t|
-    t.integer "category_id"
     t.string "talla"
     t.string "color"
-    t.string "description"
-    t.integer "user_id"
+    t.string "descripcion"
     t.string "marca"
     t.integer "valor"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "category_id"
+    t.bigint "user_id"
+    t.index ["category_id"], name: "index_wears_on_category_id"
+    t.index ["user_id"], name: "index_wears_on_user_id"
   end
 
+  add_foreign_key "wears", "categories"
+  add_foreign_key "wears", "users"
 end
