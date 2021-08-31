@@ -10,7 +10,9 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    @category.destroy
+    if @category.destroy
+      redirect_to category_path
+    end
   end
 
   def new
@@ -19,12 +21,20 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.new(category_params)
-    @category.save
+    if @category.save
+      redirect_to @category
+    else
+      render :new
+    end
   end
 
   def update
     @category = Category.new(category_params)
-    @category.update
+    if @category.update
+      redirect_to @categoty
+    else
+      render :edit
+    end
   end
 
   def show
