@@ -1,2 +1,0 @@
-class Wear < ApplicationRecord
-end
