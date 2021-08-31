@@ -1,0 +1,39 @@
+<div class = "navbar-lewagon ">
+  <div class = "row menu_head">
+    <div class = "col-12 col-md-12 col-lg-4 col-xl-4 ">
+      <%= link_to image_tag("PNG.png"), root_path, class:"img_logo"%>
+    </div>
+    <div class = "col-6 col-md-6 col-lg-4 col-xl-4 container text-center">
+      <form class= "d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" readonly>
+        <button class="btn btn-danger " type="submit">Search</button>
+        <button class="btn btn-danger " type="submit">Login</button>
+      </form>
+    </div>
+    <div class = "col-6 col-md-6 col-lg-4 col-xl-4 text-center">    
+      <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />    
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class= "menu row">
+      <div class= "col-12 col-md-6 col-lg-4 col-xl-4 ">
+        <div class="container-fluid">
+          <div class= "menu row">
+            <div class= "col-6 col-md-6 col-lg-3 col-xl3 " >
+              <%= link_to  "Inicio", root_path %>
+            </div>
+            <div class= "col-6 col-md-6 col-lg-3 col-xl3  " >
+              <%= link_to  "Compra", root_path %>
+            </div>
+            <div class= "col-6 col-md-6 col-lg-3 col-xl3 " >
+              <%= link_to  "Nosotros", root_path %>
+            </div>
+            <div class= "col-6 col-md-6   col-lg-3 col-xl3 " >
+              <%= link_to  "Contacto", root_path %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
