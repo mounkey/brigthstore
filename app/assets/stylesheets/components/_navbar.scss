@@ -1,10 +1,24 @@
 .navbar-lewagon {
+<<<<<<< HEAD
   height: 80px;
   background: #A3DDCB;
   color: white;
   font-size:16px;
 } 
 
+=======
+  height: auto;
+  padding-bottom: 20px;
+  background: #A3DDCB;
+  color: white;
+  font-size:18px;
+  font-family: 'Montserrat', sans-serif;
+} 
+
+.menu_head{
+  padding-top: 40px;
+}
+>>>>>>> 85e4c113ac850c105968df11777a2fbe74f7d670
 .navbar-lewagon a{
   text-decoration: none;
   color:white;
@@ -14,6 +28,12 @@
   height: 120px;
 }
 
+<<<<<<< HEAD
+=======
+.img_logo{
+  padding-left: 50px;
+}
+>>>>>>> 85e4c113ac850c105968df11777a2fbe74f7d670
 .navbar-lewagon button{
   margin-right: 10px;
 }
@@ -27,6 +47,7 @@
   background: #A3DDCB;
   color: white;
 
+<<<<<<< HEAD
 }
 
 .navbar-lewagon2 a{
@@ -37,4 +58,17 @@
 
 .menu_link{
   margin-right: 45px;
+=======
+>>>>>>> 85e4c113ac850c105968df11777a2fbe74f7d670
 }
+
+.navbar-lewagon2 a{
+  text-decoration: none;
+  color:white;
+  margin-left: 0px;
+}
+
+.menu{
+  margin-left: -5px;
+  margin-top: 15px;
+} 
