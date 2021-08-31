@@ -1,0 +1,32 @@
+.footer {
+  margin-top: 4em;
+  padding: 30px;
+  height: 150px;
+  background-color: rgb(163,221,203);
+  text-decoration: none;
+  text-align: left;
+  color: white;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer a {
+  text-decoration: none;
+  color:white;
+}
+
+.footer i {
+  font-size: 32px;
+  text-align: left;
+  display: inline-block;
+  width: 3em;
+}
+
+.ul {
+  display:block;
+  margin-bottom: 0em;
+}
+
+.img {
+  text-align-last: right;
+}
