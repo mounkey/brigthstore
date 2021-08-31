@@ -1,5 +1,5 @@
 class OrderItemsController < ApplicationController
-  before_action: only: [:destroy, :edit, :update, :show]
+  before_action :set_orderitems, only: [:destroy, :edit, :update, :show]
   
   def index
     @order_items = Order_Items.all
@@ -12,7 +12,11 @@ class OrderItemsController < ApplicationController
 
   def create
     @order_item = Order_Items.new(order_items_params)
-    @order_item.save
+    if @order_item.save
+      redirect_to @order_item
+    else
+      render :new
+    end
   end
 
   def show
@@ -23,11 +27,17 @@ class OrderItemsController < ApplicationController
 
   def update
     @order_item = Order_Items.new(order_items_params)
-    @order.update
+    if @order.update
+      redirect_to @order_item
+    else
+      render :edit
+    end
   end
 
   def destroy
-    @order_item.destroy
+    if @order_item.destroy
+      redirect_to @order_item_path
+    end
   end
 
   private
