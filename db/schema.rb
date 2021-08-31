@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_31_184844) do
+ActiveRecord::Schema.define(version: 2021_08_31_212755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,29 @@ ActiveRecord::Schema.define(version: 2021_08_31_184844) do
     t.text "nombre"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "order_items", force: :cascade do |t|
+    t.integer "price"
+    t.integer "cantidad"
+    t.bigint "wear_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["wear_id"], name: "index_order_items_on_wear_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "monto"
+    t.date "fecha"
+    t.string "metodopago"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,11 +67,10 @@ ActiveRecord::Schema.define(version: 2021_08_31_184844) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "category_id"
-    t.bigint "user_id"
     t.index ["category_id"], name: "index_wears_on_category_id"
-    t.index ["user_id"], name: "index_wears_on_user_id"
   end
 
+  add_foreign_key "order_items", "wears"
+  add_foreign_key "orders", "users"
   add_foreign_key "wears", "categories"
-  add_foreign_key "wears", "users"
 end
