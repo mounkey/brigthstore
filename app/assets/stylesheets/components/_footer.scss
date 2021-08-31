@@ -1,8 +1,5 @@
 .footer {
 background-color: rgb(163,221,203);
-display: flex;
-align-items: center;
-justify-content: space-between;
 height: auto;
 text-decoration: none;
 padding: 0px 20px;
@@ -26,10 +23,13 @@ color: #E5707E;
 
 .footer a {
 color:white;
-display: flex;
 padding: 2px 20px;
 }
 
+.nav_links a{
+    display: inline-block;
+    
+}
 .footer a:hover {
 color: #E5707E;
 }
