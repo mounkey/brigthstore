@@ -21,6 +21,7 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.new(category_params)
+
     if @category.save
       redirect_to @category
     else
@@ -30,6 +31,7 @@ class CategoriesController < ApplicationController
 
   def update
     @category = Category.new(category_params)
+
     if @category.update
       redirect_to @categoty
     else
