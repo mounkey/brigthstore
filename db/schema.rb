@@ -10,28 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_31_213237) do
+ActiveRecord::Schema.define(version: 2021_09_01_132307) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
-  create_table "orders", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.integer "monto"
-    t.date "date"
-    t.string "metodopago"
-    t.string "address"
-    t.string "city"
-    t.string "state"
-    t.string "country"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_orders_on_user_id"
-  end
-
-||||||| 02abd29
-=======
   create_table "categories", force: :cascade do |t|
     t.text "nombre"
     t.datetime "created_at", precision: 6, null: false
@@ -50,20 +33,19 @@ ActiveRecord::Schema.define(version: 2021_08_31_213237) do
   end
 
   create_table "orders", force: :cascade do |t|
+    t.bigint "user_id", null: false
     t.integer "monto"
-    t.date "fecha"
+    t.date "date"
     t.string "metodopago"
     t.string "address"
     t.string "city"
     t.string "state"
     t.string "country"
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
->>>>>>> ffdbd433067ced2d27eebcd4e48da72425eae2c4
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -78,10 +60,6 @@ ActiveRecord::Schema.define(version: 2021_08_31_213237) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-<<<<<<< HEAD
-  add_foreign_key "orders", "users"
-||||||| 02abd29
-=======
   create_table "wears", force: :cascade do |t|
     t.string "talla"
     t.string "color"
@@ -98,5 +76,4 @@ ActiveRecord::Schema.define(version: 2021_08_31_213237) do
   add_foreign_key "order_items", "wears"
   add_foreign_key "orders", "users"
   add_foreign_key "wears", "categories"
->>>>>>> ffdbd433067ced2d27eebcd4e48da72425eae2c4
 end
