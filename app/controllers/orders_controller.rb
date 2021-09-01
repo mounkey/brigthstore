@@ -1,38 +1,11 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only [:show, :edit, :update, :destroy]
-
+ before_action :set_order, only: [:destroy, :show, :update, :edit]
+  
   def index
     @orders = Order.all
   end
 
-  def show
-  end
-
-  def new
-    @order = Order.new
-  end
-
-  def create
-    @order = Order.new(order_params)
-    @order.use_id = user
-    if @order.save
-      redirect_to @order
-    else
-      render :new
-    end
-  end
-
   def edit
-  end
-
-  def update
-    @order = Order.new(order_params)
-    @order.use_id = user
-    if @order.update
-      redirect_to @order
-    else
-      render :edit
-    end
   end
 
   def destroy
@@ -41,13 +14,41 @@ class OrdersController < ApplicationController
     end
   end
 
+  def new
+    @order = Order.new
+  end
+
+  def create
+    @order = Order.new(order_params)
+    @order.user_id = current_user
+    if @order.save
+      redirect_to @order
+    else
+      render :new
+    end
+  end
+
+  def update
+    @order = Order.new(order_params)
+    @order.user_id = current_user
+    if @order.update
+      redirect_to @order
+    else
+      render :edit
+    end
+  end
+
+  def show
+
+  end
+  
   private
 
   def set_order
     @order = Order.find(params[:id])
-  end
+  end 
 
   def order_params
-    params.require(:order).permit(:monto, :date, :metodopago, :address, :city, :state, :country)
+    params.require(:order).permit(:monto, :fecha, :metodoago, :address, :city, :state, :country)
   end
 end
