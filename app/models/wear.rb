@@ -4,5 +4,5 @@ class Wear < ApplicationRecord
   validates :talla, presence: true
   validates :color, presence: true
   validates :marca, presence: true
-  validate :valor, presence: true
+  validates :valor, presence: true
 end
