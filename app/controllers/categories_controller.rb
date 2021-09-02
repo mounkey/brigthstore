@@ -1,21 +1,18 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!, only:[:new, :create, :update, :edit, :destroy]
-  
   before_action :set_category, only:[:destroy, :show, :update, :edit]
-  #skip_before_action :authenticate_user!, only: [:index, :show]
-  authorize @categories
-
-
+  
   def index
     @categories = Category.all
-    #@categories = policy_scope(category).order(created_at: :desc)
   end
 
   def edit
+    authorize @category
   end
 
   def destroy
-    record.user = user
+    authorize @category
+
     if @category.destroy
       redirect_to category_path
     end
@@ -23,11 +20,12 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
+    authorize @category
   end
 
   def create
-    record.user = user
     @category = Category.new(category_params)
+    authorize @category
 
     if @category.save
       redirect_to @category
@@ -37,10 +35,9 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    record.user = user
-    @category = Category.new(category_params)
+    authorize @category
 
-    if @category.update
+    if @category.update(category_params)
       redirect_to @categoty
     else
       render :edit
