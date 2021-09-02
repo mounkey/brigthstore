@@ -3,8 +3,8 @@ class WearsController < ApplicationController
   before_action :set_wear, only: [:destroy, :show, :update, :edit]
 
   def index
-    #@wears = Wear.all
-    @wears = policy_scope(wear).order(created_at: :desc)
+    @wears = Wear.all
+    #@wears = policy_scope(wear).order(created_at: :desc)
   end
 
   def show
@@ -38,7 +38,7 @@ class WearsController < ApplicationController
   end
 
   def update
-    @wear= Wear.update(wear_params)
+    @wear = Wear.update(wear_params)
     authorize @wear
     @wear.user_id = current_user
     if @wear.update
@@ -48,7 +48,8 @@ class WearsController < ApplicationController
     end
   end
 
-private
+  private
+  
   def set_wear
     @wear = Wear.find(params[:id])
   end 
