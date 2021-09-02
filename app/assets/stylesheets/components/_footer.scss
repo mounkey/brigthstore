@@ -1,26 +1,54 @@
 .footer {
-  padding: 5px;
-  height: 200px;
-  background-color: rgb(163,221,203);
-  text-decoration: none;
-  text-align: left;
-  color: white;
-  font-size: 20px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.foot {
-  margin-top: 50px;
-}
-
-.search_logo{
-  margin-top: 50px;
-}
-
-
-.footer a {
-  margin-top: 50px;
-  padding-right: 80px;
-  text-decoration: none;
-  color:white;
-}
+    background-color: rgb(163,221,203);
+    height: auto;
+    text-decoration: none;
+    padding: 0px 20px;
+    color: white;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    padding: 10px;
+    }
+    
+    .footer i {
+    font-size: 29px;
+    display: block;
+    width: 0.5em;
+    }
+    
+    .footer i:hover {
+    color: #E5707E;
+    }
+    
+    .footer a {
+    color:white;
+    padding: 2px 20px;
+    }
+    
+    .nav_links a{
+    display: inline-block;
+    padding: 0 60px;
+    }
+    
+    .footer a:hover {
+    color: #E5707E;
+    }
+    
+    @media(max-width: 991px){
+        .banner{
+            width: 700px;}
+    };
+    
+    @media(max-width: 960px){
+        .banner{
+            width: 720px;}
+    };
+    @media(max-width: 720px){
+        .banner{
+            width: 500px;}
+    };
+    @media(max-width: 540px){
+        .banner{
+            width: 300px;}
+    };
+    

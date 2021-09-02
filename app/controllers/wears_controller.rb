@@ -26,7 +26,6 @@ class WearsController < ApplicationController
     end
   end
 
-
   def edit
     authorize @wear
   end
