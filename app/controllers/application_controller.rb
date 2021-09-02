@@ -1,16 +1,13 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  
+  include Pundit
   protect_from_forgery with: :exception
 
   before_action :configure_permitted_parameters, if: :devise_controller? 
-  before_action :authenticate_user!
-  include Pundit
-
+  
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
-
 
   def after_sign_in_path_for(resource)
     root_path

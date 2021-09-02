@@ -1,8 +1,12 @@
 class WearsController < ApplicationController
-  before_action :set_wear, only: [:destroy, :show, :update, :edit]
+  before_action :authenticate_user!, only:[:new, :create, :update, :edit, :destroy]
 
+  before_action :set_wear, only: [:destroy, :show, :update, :edit]
+  authorize @category
+  
   def index
-    @wears = Wear.all
+    #@wears = Wear.all
+    @wears = policy_scope(wear).order(created_at: :desc)
   end
 
   def show

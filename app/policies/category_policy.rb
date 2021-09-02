@@ -1,8 +1,19 @@
 class CategoryPolicy < ApplicationPolicy
   class Scope < Scope
-
+    def index
+      true
+    end    
+    def update
+      true
+    end
+    def destroy
+      true
+    end
+    def create
+      true
+    end
     def resolve
-      scope.all
+      s cope.all
     end
   end
 

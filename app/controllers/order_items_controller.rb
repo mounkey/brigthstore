@@ -1,16 +1,18 @@
 class OrderItemsController < ApplicationController
   before_action :set_orderitems, only: [:destroy, :edit, :update, :show]
-  
+  authorize @order_items
+
   def index
     @order_items = Order_Items.all
+    @order_items = policy_scope(order_item).order(created_at: :desc)
   end
-
 
   def new
     @order_item = Order_Items.new
   end
 
   def create
+    record.user = user
     @order_item = Order_Items.new(order_items_params)
     if @order_item.save
       redirect_to @order_item
@@ -26,6 +28,7 @@ class OrderItemsController < ApplicationController
   end
 
   def update
+    record.user = user
     @order_item = Order_Items.new(order_items_params)
     if @order.update
       redirect_to @order_item
@@ -35,6 +38,7 @@ class OrderItemsController < ApplicationController
   end
 
   def destroy
+    record.user = user
     if @order_item.destroy
       redirect_to @order_item_path
     end
