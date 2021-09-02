@@ -1,4 +1,0 @@
-<h2>Edit Wear</h2>
-<% @wear.each do |w|  %>
-  <%= "#{w.marca} - #{w.talla} - #{w.color} - #{w.descripcion} - #{w.category.nombre} - #{w.valor} "%> <%= link_to  "Modificar", wear_path(w)%>  <%= link_to  "Eliminar", wears_path, method: :delete %>
-<% end %>
