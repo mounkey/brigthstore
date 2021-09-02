@@ -28,8 +28,26 @@ padding: 2px 20px;
 
 .nav_links a{
     display: inline-block;
-    
+    padding: 0 60px;
 }
+
 .footer a:hover {
 color: #E5707E;
 }
+
+@media(max-width: 991px){
+    .banner{
+        width: 700px;}
+};
+@media(max-width: 960px){
+    .banner{
+        width: 720px;}
+};
+@media(max-width: 720px){
+    .banner{
+        width: 500px;}
+};
+@media(max-width: 540px){
+    .banner{
+        width: 300px;}
+};
