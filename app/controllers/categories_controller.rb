@@ -1,14 +1,18 @@
 class CategoriesController < ApplicationController
+  before_action :authenticate_user!, only:[:new, :create, :update, :edit, :destroy]
   before_action :set_category, only:[:destroy, :show, :update, :edit]
-
+  
   def index
     @categories = Category.all
   end
 
   def edit
+    authorize @category
   end
 
   def destroy
+    authorize @category
+
     if @category.destroy
       redirect_to category_path
     end
@@ -16,10 +20,12 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
+    authorize @category
   end
 
   def create
     @category = Category.new(category_params)
+    authorize @category
 
     if @category.save
       redirect_to @category
@@ -29,9 +35,9 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    @category = Category.new(category_params)
+    authorize @category
 
-    if @category.update
+    if @category.update(category_params)
       redirect_to @categoty
     else
       render :edit
