@@ -1,8 +1,11 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only:[:destroy, :show, :update, :edit]
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
 
   def index
     @categories = Category.all
+    skip_policy_scope
   end
 
   def edit
