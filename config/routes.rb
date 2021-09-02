@@ -1,26 +1,11 @@
 Rails.application.routes.draw do
-  get 'order_items/index'
-  get 'order_items/new'
-  get 'order_items/create'
-  get 'order_items/show'
-  get 'order_items/edit'
-  get 'order_items/update'
-  get 'order_items/delete'
-  get 'orders/index'
-  get 'orders/edit'
-  get 'orders/destroy'
-  get 'orders/new'
-  get 'orders/create'
-  get 'orders/update'
-  get 'orders/show'
-  get 'categories/index'
-  get 'categories/edit'
-  get 'categories/delete'
-  get 'categories/new'
-  get 'categories/create'
-  get 'categories/update'
-  get 'categories/show'
-  devise_for :users
   root to: 'pages#home'
+  resources :categories, only: %i[new create edit update show destroy index] 
+
+  resources :wears, only: %i[new create edit update show destroy index]
+
+  resources :orders, only: %i[new update create destroy index]
+
+  devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
