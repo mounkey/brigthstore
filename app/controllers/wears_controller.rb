@@ -8,7 +8,7 @@ class WearsController < ApplicationController
   end
 
   def show
-    
+    authorize @wear
   end
 
   def new
@@ -17,6 +17,7 @@ class WearsController < ApplicationController
 
   def create
     @wear = Wear.new(wear_params)
+    authorize @wear
     @wear.user_id = current_user
     if @wear.save
       redirect_to @wear
@@ -27,10 +28,11 @@ class WearsController < ApplicationController
 
 
   def edit
-
+    authorize @wear
   end
 
   def destroy
+    authorize @wear
     if @wear.delete
       redirect_to wear_path
     end
@@ -38,6 +40,7 @@ class WearsController < ApplicationController
 
   def update
     @wear= Wear.update(wear_params)
+    authorize @wear
     @wear.user_id = current_user
     if @wear.update
       redirect_to @wear
