@@ -1,2 +1,8 @@
 <h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<%= link_to "Delete #{@category.nombre}",
+  category_path(@category),
+  method: :delete,
+  data: { confirm: "Are you sure?" } %>
+<!--<a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/categories/2">
+  Delete <%= @category.nombre %>
+</a>-->
