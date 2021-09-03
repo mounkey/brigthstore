@@ -3,7 +3,7 @@ class WearsController < ApplicationController
   before_action :set_wear, only: [:destroy, :show, :update, :edit]
 
   def index
-    @wears = Wear.all.order(created_at: desc)
+    @wears = Wear.all
     #@wears = policy_scope(wear).order(created_at: :desc)
   end
 
