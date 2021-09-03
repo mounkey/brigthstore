@@ -1,51 +1,82 @@
 .banner {
     background-image: url(asset-path('banner.png'));
+    width: 100%;
+    background-size: 100%;
     height: auto;
     text-align: left;
     text-indent: 5px;
-    font-size: 32px;
-    margin: 0em;
     line-height: 5px;
-    padding-left: 20px;
     object-fit: cover;
     background-repeat: no-repeat;
     display:block;
- 
+    padding-left: 20px;
+    margin-bottom: 60px;
 }
 
 .banner h1 {
     padding-left: 20px;
     padding-top: 200px;
-    margin: 0px;
+    padding-right: 0px;
     width: 600px;
+    margin:0px;
     color: #000000;
+    font-size: 29px;
+   
 }
 
 .banner h2 {
     margin: 20px;
     color: #E5707E;
+    font-size: 27px;
 }
 
 .banner p {
     margin: 20px;
     color: grey;
     font-size: 14px;
-    margin-bottom: 60px;
+    padding-right: 0px;
+    line-height:20px;
+    width: 900px;
 }
 
 @media(max-width: 991px){
     .banner{
-        width: 700px;}
+        width: 700px;
+    }
+    p{
+        width: 300px;
+        font-size: 10px; 
+    }
 };
+
 @media(max-width: 960px){
     .banner{
-        width: 720px;}
+        width: 720px;
+        }
+        h2{
+            width: 280px;
+        }
+        p{
+            width: 200px;
+            font-size: 8px; 
+        }
 };
+
 @media(max-width: 720px){
     .banner{
         width: 500px;}
+        p{
+            width: 700px;
+            font-size: 8px;  
+        }
 };
+
 @media(max-width: 540px){
     .banner{
-        width: 300px;}
+        width: 300px;
+    }
+    p{
+        width: 280px;
+        font-size: 10px; 
+    }
 };
