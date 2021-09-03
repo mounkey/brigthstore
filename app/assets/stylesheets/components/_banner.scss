@@ -36,47 +36,17 @@
     font-size: 14px;
     padding-right: 0px;
     line-height:20px;
-    width: 900px;
 }
 
 @media(max-width: 991px){
     .banner{
-        width: 700px;
+        width: 100%;
+    }
+    h1{
+        padding-top: 20px;
     }
     p{
         width: 300px;
-        font-size: 10px; 
-    }
-};
-
-@media(max-width: 960px){
-    .banner{
-        width: 720px;
-        }
-        h2{
-            width: 280px;
-        }
-        p{
-            width: 200px;
-            font-size: 8px; 
-        }
-};
-
-@media(max-width: 720px){
-    .banner{
-        width: 500px;}
-        p{
-            width: 700px;
-            font-size: 8px;  
-        }
-};
-
-@media(max-width: 540px){
-    .banner{
-        width: 300px;
-    }
-    p{
-        width: 280px;
         font-size: 10px; 
     }
 };
