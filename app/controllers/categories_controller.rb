@@ -38,7 +38,8 @@ class CategoriesController < ApplicationController
     authorize @category
 
     if @category.update(category_params)
-      redirect_to @categoty
+      # redirect_to @categoty
+      redirect_to @category
     else
       render :edit
     end

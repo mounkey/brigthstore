@@ -1,9 +1,8 @@
 <h1>Categories#show</h1>
-<h2><%= @category.nombre %></h2>
 <%= link_to "Delete #{@category.nombre}",
   category_path(@category),
   method: :delete,
   data: { confirm: "Are you sure?" } %>
-<a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/categories/2">
-  Delete the category
-</a>
+<!--<a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/categories/2">
+  Delete <%= @category.nombre %>
+</a>-->
