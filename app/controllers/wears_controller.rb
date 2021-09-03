@@ -13,13 +13,19 @@ class WearsController < ApplicationController
 
   def new
     @wear = Wear.new
+    authorize @wear
+    @categories = Category.all
+  end
+
+  def all
+    @category = Category.all
   end
 
   def create
     @wear = Wear.new(wear_params)
     authorize @wear
     @wear.user_id = current_user
-    
+
     if @wear.save
       redirect_to @wear
     else
