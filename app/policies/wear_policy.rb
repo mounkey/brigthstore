@@ -2,11 +2,9 @@ class WearPolicy < ApplicationPolicy
   def edit?
     true
   end
-  def show?
-    true
-  end
+
   def update?
-    true
+  true
   end
 
   def destroy?
@@ -16,7 +14,7 @@ class WearPolicy < ApplicationPolicy
   def new?
     true
   end
-  
+
   def create?
     true
   end
