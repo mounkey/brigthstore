@@ -14,7 +14,7 @@ class CategoriesController < ApplicationController
     authorize @category
 
     if @category.destroy
-      redirect_to category_path
+      redirect_to category_path(@category)
     end
   end
 

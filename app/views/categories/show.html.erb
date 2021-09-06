@@ -1,8 +1,11 @@
-<h1>Categories#show</h1>
-<%= link_to "Delete #{@category.nombre}",
-  category_path(@category),
-  method: :delete,
-  data: { confirm: "Are you sure?" } %>
-<!--<a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/categories/2">
-  Delete <%= @category.nombre %>
-</a>-->
+<div class = "container">
+  <h1>Categorias</h1>
+  <%= @category.nombre %>
+  <%= link_to  "Editar", 
+    edit_category_path %> |
+  <%= link_to  "Eliminar", category_path, 
+    method: :delete,
+    data: {confirm: "¿Estas seguro?"} %> |
+  <%= link_to  "Volver", 
+    categories_path %>
+</div>
