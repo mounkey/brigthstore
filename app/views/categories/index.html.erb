@@ -1,8 +1,10 @@
 <div class= "container">
-  <h1>Categories</h1>
+  <h1>Categorias</h1>
   <ul>
   <% @categories.each do |category| %>
     <li><%= link_to category.nombre, category_path(category) %></li>
   <% end %>
+  |<%= link_to  "Nueva categoria...", 
+    new_category_path %>|
   </ul>
 </div>
