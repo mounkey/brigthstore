@@ -1,3 +1,5 @@
-<h2>Edit Wear</h2>
-  <% w = @wear.id %>
-  <%= " #{@wear.marca} - #{@wear.talla} - #{@wear.color} - #{@wear.descripcion} - #{@wear.valor} - #{@wear.category.nombre}"%> <%= link_to  "Modificar", edit_wear_path(w)%>  <%= link_to  "Eliminar", wear_path(w), method: :delete %>
+<div class="container">
+  <h2>Edit Wear</h2>
+    <% w = @wear.id %>
+    <%= " #{@wear.marca} - #{@wear.talla} - #{@wear.color} - #{@wear.descripcion} - #{@wear.valor} - #{@wear.category.nombre}"%> <%= link_to  "Modificar", edit_wear_path(w)%>  <%= link_to  "Eliminar", wear_path(w), method: :delete %>
+</div>
