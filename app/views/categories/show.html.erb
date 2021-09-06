@@ -3,8 +3,8 @@
   <%= @category.nombre %>
   <%= link_to  "Editar", 
     edit_category_path %> |
-  <%= link_to  "Eliminar", category_path, 
-    method: :delete,
+  <%= link_to  "Borrar", category_path, 
+    method: "delete",
     data: {confirm: "¿Estas seguro?"} %> |
   <%= link_to  "Volver", 
     categories_path %>

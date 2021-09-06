@@ -14,7 +14,8 @@ class CategoriesController < ApplicationController
     authorize @category
 
     if @category.destroy
-      redirect_to category_path(@category)
+      flash[:notice] = "Categoria ha sido borrada!!"
+      redirect_to categories_path(@categories)
     end
   end
 
