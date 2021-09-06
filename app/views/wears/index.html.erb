@@ -1,1 +1,4 @@
 <h1>wears List</h1>
+<% @wears.each do |w|%>
+  <%= link_to  w.marca, wear_path %> 
+<% end %>

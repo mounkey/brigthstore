@@ -13,12 +13,19 @@ class WearsController < ApplicationController
 
   def new
     @wear = Wear.new
+    authorize @wear
+    @categories = Category.all
+  end
+
+  def all
+    @category = Category.all
   end
 
   def create
     @wear = Wear.new(wear_params)
     authorize @wear
     @wear.user_id = current_user
+
     if @wear.save
       redirect_to @wear
     else
@@ -55,6 +62,6 @@ class WearsController < ApplicationController
   end 
 
   def wear_params
-    params.require(:wear).permit(:category_id, :talla, :color, :description, :marca, :valor)
+    params.require(:wear).permit(:category, :talla, :color, :description, :marca, :valor)
   end
 end
