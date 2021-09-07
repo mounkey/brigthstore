@@ -15,10 +15,11 @@
         <div class="row d-flex justify-content-around">
             <div class ="col-lg-6 col-sm-12">
                 <nav class=" nav d-flex nav-links col-12 col-md-12 col-xs-1">
-                    <a class="nav-link" href="#">Quienes Somos</a>
-                    <a class="nav-link" href="#">Ayuda</a>
-                    <a class="nav-link" href="#">Contáctenos</a>
-                    <a class="nav-link" href="#">Dona</a>
+                    <%= link_to  "Inicio", root_path, class:"nav-link" %>
+                    <%= link_to  "Compra", wears_path, class: "nav-link" %>
+                    <%= link_to  "Nosotros", pages_who_path, class: "nav-link" %>
+                    <%= link_to  "Contacto", pages_contact_path, class: "nav-link" %>
+                    <%= link_to  "ayuda", pages_help_path, class: "nav-link"%>
                 </nav>
             </div>
             <div class="col-lg-6 col-sm-12 text-right">
