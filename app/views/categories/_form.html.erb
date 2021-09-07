@@ -1,5 +1,5 @@
-<%= simple_form_for(@category), :html => {class: "form"} do |f| %>
+<%= simple_form_for @category, :html => {class: "form"} do |f| %>
 <%= f.input :nombre %>
-<%= f.submit "Agregar Categoria", class: "btn btn-primary" %>
-<%= link_to  "Volver a categorias", categories_path %>
+<%= f.submit "Agregar Categoria", class: "botones" %>
+<%= link_to  "Volver a categorias", categories_path, class: "btn botones" %>
 <% end %>
