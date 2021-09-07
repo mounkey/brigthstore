@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   get "/pages/who", to:"pages#who", as: :pages_who
   get "/pages/help", to:"pages#help", as: :pages_help
 
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
