@@ -56,6 +56,6 @@ class WearsController < ApplicationController
   end 
 
   def wear_params
-    params.require(:wear).permit(:category_id, :talla, :color, :descripcion, :marca, :valor, :user_id)
+    params.require(:wear).permit(:category_id, :talla, :color, :descripcion, :marca, :valor, :user_id, :photo)
   end
 end

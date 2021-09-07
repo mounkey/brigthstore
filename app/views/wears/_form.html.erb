@@ -5,6 +5,7 @@
   <%= f.input :descripcion %>
   <%= f.input :valor %>
   <%= f.association :category, collection: @categories.map{ |cat| [cat.nombre, cat.id]} %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit "Guardar Cambios", class: "botones" %>
   <%= link_to  "Volver", wears_path, class: "btn botones" %>
 <% end %>   
