@@ -5,7 +5,31 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
+  # confirmacion
+  def show; end
+
+  def new
+    @order = current_order
+  end
+
+  def create
+    @order = current_order
+    if @order.update(order_params)
+      redirect_to @order
+    else
+      render :new
+    end
+  end
+
   def edit
+  end
+
+  def update
+    if @order.update(order_params)
+      redirect_to @order
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -14,34 +38,6 @@ class OrdersController < ApplicationController
     end
   end
 
-  def new
-    @order = Order.new
-  end
-
-  def create
-    @order = Order.new(order_params)
-    @order.user_id = current_user
-    if @order.save
-      redirect_to @order
-    else
-      render :new
-    end
-  end
-
-  def update
-    @order = Order.new(order_params)
-    @order.user_id = current_user
-    if @order.update
-      redirect_to @order
-    else
-      render :edit
-    end
-  end
-
-  def show
-
-  end
-  
   private
 
   def set_order
@@ -49,6 +45,6 @@ class OrdersController < ApplicationController
   end 
 
   def order_params
-    params.require(:order).permit(:monto, :fecha, :metodoago, :address, :city, :state, :country)
+    params.require(:order).permit(:monto, :fecha, :order_detail, :order_detail_id)
   end
 end
