@@ -1,7 +1,7 @@
 <div class="container">
   <div class = "row cards">
     <div class = "col-12 col-sm-12">
-      <h2><%=" #{@wear.marca.capitalize} - #{@wear.category.nombre}" </h2>
+      <h2><%= "#{@wear.marca.capitalize} - #{@wear.category.nombre}" %></h2>
     </div>
     <div class = "col-12 col-sm-6 col-lg-6">
     
@@ -10,7 +10,7 @@
       
       <%= link_to "seguir comprando", wears_path, class: "btn botones" %> <%= link_to  "atras", wears_path, class: "btn botones"  %>
       <p> </p>
-      <%= " #{@wear.marca} - #{@wear.talla} - #{@wear.color} - #{@wear.descripcion} - #{@wear.valor} - #{@wear.category.nombre}"%> <%= link_to  "Modificar", edit_wear_path(w)%>  <%= link_to  "Eliminar", wear_path(w), method: :delete %>
+      <%= " #{@wear.marca} - #{@wear.talla} - #{@wear.color} - #{@wear.descripcion} - #{@wear.valor} - #{@wear.category.nombre}"%> <%= link_to  "Modificar", edit_wear_path(@wear)%>  <%= link_to  "Eliminar", wear_path(@wear), method: :delete %>
     </div>
     
       
