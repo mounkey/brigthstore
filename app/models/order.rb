@@ -4,12 +4,12 @@ class Order < ApplicationRecord
   has_many :order_items, dependent: :destroy
   has_many :wears, through: :order_items
 
-  validates :metodopago, presence: true
-  validates :address, presence: true
-  validates :city, presence: true
-  validates :state, presence: true
-  validates :country, presence: true
-  validates :address, presence: true
+  # validates :metodopago, presence: true
+  # validates :address, presence: true
+  # validates :city, presence: true
+  # validates :state, presence: true
+  # validates :country, presence: true
+  # validates :address, presence: true
 
   after_create_commit :update_order_subtotal
   after_update_commit :update_order_subtotal
