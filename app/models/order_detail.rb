@@ -1,11 +1,10 @@
 class OrderDetail < ApplicationRecord
-  
-  t.string :metodopago
-  t.string :address
-  t.string :city
-  t.string :state
-  t.string :country
-  t.string :address
-  t.references :order, foreign_key: true
+  belongs_to :order
 
+  validates :metodopago, presence: true
+  validates :address, presence: true
+  validates :city, presence: true
+  validates :state, presence: true
+  validates :country, presence: true
+  validates :address, presence: true
 end
