@@ -5,6 +5,9 @@ class Order < ApplicationRecord
   has_many :order_items, dependent: :destroy
   has_many :wears, through: :order_items
 
+  enum status: %i[initialized pending confirmed]
+  # order.initialized! = setear status nuevo (order.pending!)
+  # order.pending? = preguntar el status, => true o false
 
   after_create_commit :update_order_subtotal
   after_update_commit :update_order_subtotal

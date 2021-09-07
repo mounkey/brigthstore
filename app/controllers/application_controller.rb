@@ -9,8 +9,18 @@ class ApplicationController < ActionController::Base
   after_action :verify_authorized, except: [:index, :show], unless: :skip_pundit?
   #after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
 
+  helper_method :current_order
+
   def after_sign_in_path_for(resource)
     root_path
+  end
+
+  def current_order
+    if current_user.present?
+      # recuperar la orden reciente
+    else
+      # si usuario no esta logeado, crear una orden temporal
+    end
   end
 
   protected
