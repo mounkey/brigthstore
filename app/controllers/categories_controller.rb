@@ -14,7 +14,8 @@ class CategoriesController < ApplicationController
     authorize @category
 
     if @category.destroy
-      redirect_to category_path
+      flash[:notice] = "Categoria ha sido borrada!!"
+      redirect_to categories_path(@categories)
     end
   end
 
@@ -38,7 +39,8 @@ class CategoriesController < ApplicationController
     authorize @category
 
     if @category.update(category_params)
-      redirect_to @categoty
+      # redirect_to @categoty
+      redirect_to @category
     else
       render :edit
     end
@@ -54,6 +56,6 @@ class CategoriesController < ApplicationController
   end
 
   def category_params
-    params.require(:category).permit(:name)
+    params.require(:category).permit(:nombre)
   end
 end

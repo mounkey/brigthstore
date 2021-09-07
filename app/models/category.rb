@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
   has_many :wears
-  validates :name, presence: true
+  validates :nombre, presence: true
 end

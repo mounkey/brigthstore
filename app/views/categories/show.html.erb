@@ -1,2 +1,11 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<div class = "container">
+  <h1>Categorias</h1>
+  <%= @category.nombre %>
+  <%= link_to  "Editar", 
+    edit_category_path %> |
+  <%= link_to  "Borrar", category_path, 
+    method: "delete",
+    data: {confirm: "¿Estas seguro?"} %> |
+  <%= link_to  "Volver", 
+    categories_path %>
+</div>

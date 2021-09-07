@@ -4,23 +4,24 @@ class WearsController < ApplicationController
 
   def index
     @wears = Wear.all
-    #@wears = policy_scope(wear).order(created_at: :desc)
+    #wears = policy_scope(wear).order(created_at: :desc)
   end
 
   def show
-    authorize @wear
   end
 
   def new
     @wear = Wear.new
+    authorize @wear
+    @categories = Category.all
   end
 
   def create
     @wear = Wear.new(wear_params)
     authorize @wear
-    @wear.user_id = current_user
-    if @wear.save
-      redirect_to @wear
+    @wear.user_id = current_user.id
+    if @wear.save 
+      redirect_to wears_path
     else
       render :new
     end
@@ -28,33 +29,33 @@ class WearsController < ApplicationController
 
   def edit
     authorize @wear
-  end
-
-  def destroy
-    authorize @wear
-    if @wear.delete
-      redirect_to wear_path
-    end
+    @categories = Category.all
   end
 
   def update
-    @wear = Wear.update(wear_params)
     authorize @wear
-    @wear.user_id = current_user
-    if @wear.update
-      redirect_to @wear
+    #@wear.user_id = current_user.id
+    if @wear.update(wear_params)
+      redirect_to wears_path
     else
       render :edit
     end
   end
 
+  def destroy
+    authorize @wear
+    if @wear.delete
+      redirect_to wears_path
+    end
+  end
+
   private
-  
+
   def set_wear
     @wear = Wear.find(params[:id])
   end 
 
   def wear_params
-    params.require(:wear).permit(:category_id, :talla, :color, :description, :marca, :valor)
+    params.require(:wear).permit(:category_id, :talla, :color, :descripcion, :marca, :valor, :user_id)
   end
 end
