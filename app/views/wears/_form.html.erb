@@ -1,9 +1,10 @@
-<%= simple_form_for @wear  do |f| %>
-  <%= f.input :marca %>
+<%= simple_form_for @wear, :html => {class: 'form'} do |f| %>
+  <h6><%= f.input :marca %></h6>
   <%= f.input :talla %>
   <%= f.input :color %>
   <%= f.input :descripcion %>
   <%= f.input :valor %>
   <%= f.association :category, collection: @categories.map{ |cat| [cat.nombre, cat.id]} %>
-  <%= f.submit "Submit Wear", class: "btn btn-primary" %>
+  <%= f.submit "Guardar Cambios", class: "botones" %>
+  <%= link_to  "Volver", wears_path, class: "btn botones" %>
 <% end %>   

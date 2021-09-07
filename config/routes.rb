@@ -8,5 +8,9 @@ Rails.application.routes.draw do
   resources :orders, only: %i[new update create destroy index]
 
   devise_for :users
+
+  get "/pages/contact", to: "pages#contact", as: :pages_contact
+  get "/pages/who", to:"pages#who", as: :pages_who
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
