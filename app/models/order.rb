@@ -1,5 +1,7 @@
 class Order < ApplicationRecord
   belongs_to :user
+  has_many :wears, through: :OrderItem
+  has_many :OrderItem
   validates :monto, presence: true
   validates :metodopago, presence: true
   validates :address, presence: true

@@ -4,7 +4,9 @@
       <h2><%= "#{@wear.marca.capitalize} - #{@wear.category.nombre}" %></h2>
     </div>
     <div class = "col-12 col-sm-6 col-lg-6">
-    
+    <div class="cards" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @wear.photo.attached? ? cl_image_path(@wear.photo.key) : asset_path('PNG.png') %>)"> 
+      <%= cl_image_tag(@wear.photo.key, width: 400, height: 300 ) %>
+    </div>
     </div>
     <div class = "col-12 col-sm-6 col-lg-6">
       
