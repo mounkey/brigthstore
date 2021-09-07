@@ -20,7 +20,8 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    @order.user_id = current_user
+    @order.user_id = current_user.id
+    
     if @order.save
       redirect_to @order
     else
