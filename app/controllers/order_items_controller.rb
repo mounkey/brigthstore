@@ -4,7 +4,7 @@ class OrderItemsController < ApplicationController
 
   def index
     @order_items = Order_Items.all
-    @order_items = policy_scope(order_item).order(created_at: :desc)
+    #@order_items = policy_scope(order_item).order(created_at: :desc)
   end
 
   def new
