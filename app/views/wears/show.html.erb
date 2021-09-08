@@ -20,12 +20,17 @@
           <%= link_to "seguir comprando", wears_path, class: "btn botones" %>
         </div>
         <div class="col-12 col-md-6">
-          <%= form_with(model: current_order.order_items.new) do |f| %>
-            <%= f.hidden_field :order_id, value: current_order.id %>
-            <%= f.hidden_field :wear_id, value: @wear.id %>
-            <%= f.hidden_field :price, value: @wear.valor %>
-            <%= f.hidden_field :cantidad, value: "1" %>
-            <%= f.submit "Comprar", class: "btn btn-sm btn-primary" %>
+          <% if user_signed_in? %>
+            <%#= form_with(model: current_order.order_items.new, url: order_order_items_path, method: :post) do |f| %>
+            <%= form_with(model: [current_order, current_order.order_items.new]) do |f| %>
+              <%= f.hidden_field :order_id, value: current_order.id %>
+              <%= f.hidden_field :wear_id, value: @wear.id %>
+              <%= f.hidden_field :price, value: @wear.valor %>
+              <%= f.hidden_field :cantidad, value: "1" %>
+              <%= f.submit "Comprar", class: "btn btn-sm btn-primary" %>
+            <% end -%>
+          <% else %>
+            <%= link_to "Ingresa para comprar", new_user_session_path, class: "btn btn-sm btn-primary" %>
           <% end -%>
         </div>
       </div>

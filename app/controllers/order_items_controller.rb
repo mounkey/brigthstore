@@ -1,11 +1,7 @@
 class OrderItemsController < ApplicationController
-  before_action :set_order_item, only: [:destroy, :edit, :update, :show]
+  before_action :set_order_item, only: [:destroy, :edit, :update]
   authorize @order_items
 
-  def index
-    @order_items = current_order.order_items
-    #@order_items = policy_scope(order_item).order(created_at: :desc)
-  end
 
   def new
     @order_item = current_order.order_items.new
@@ -22,9 +18,6 @@ class OrderItemsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def show
   end
 
   def edit
