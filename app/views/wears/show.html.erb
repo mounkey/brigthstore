@@ -15,9 +15,13 @@
     <div class = "col-12 col-sm-6 col-lg-6">
 
       
-      <%= link_to "seguir comprando", wears_path, class: "btn botones" %> <%= link_to  "comprar", wears_path, class: "btn botones"  %>
+      <%= link_to "seguir comprando", wears_path, class: "btn botones" %>
+      <%= link_to "Comprar", orders_path, class: "btn btn-sm btn-primary"  %>
+
+
       <p> 
-        <%=  #{@wear.marca} - #{@wear.talla} - #{@wear.color} - #{@wear.descripcion} - #{@wear.valor} - #{@wear.category.nombre}%> <%= link_to  "Modificar", edit_wear_path(@wear)%>  <%= link_to  "Eliminar", wear_path(@wear), method: :delete %>
+        <%= link_to  "Modificar", edit_wear_path(@wear)%>
+        <%= link_to  "Eliminar", wear_path(@wear), method: :delete %>
       </p>
     </div>
     
