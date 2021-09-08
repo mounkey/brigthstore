@@ -69,7 +69,6 @@ ActiveRecord::Schema.define(version: 2021_09_07_195939) do
   create_table "orders", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.integer "monto"
-    
     t.date "date"
     t.string "metodopago"
     t.string "address"
