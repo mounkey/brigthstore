@@ -1,6 +1,17 @@
 <div class="container">
-  <h1>wears List</h1>
+  <h1>Tienda Virtual</h1>
   <% @wears.each do |w| %>
-    <%= link_to w.marca, wear_path(w) %> 
-  <% end %>
+  <div class="card" style="width: 18rem;">
+    <% if w.photo.attached? %>
+        <%= link_to cl_image_tag(w.photo.key ), wear_path(w) %>
+      <% else %>
+        <%= link_to image_tag("PNG.png"), wear_path(w) %>
+      <% end %>
+  <div class="card-body">
+    <h5 class="card-title"><%= w.marca %> - <%= w.talla %></h5>
+    <p class="card-text"><%= w.descripcion %></p>
+    <%= link_to  "Mayor informacion", wear_path(w) %>
+  </div>
+   <% end %>
+</div> 
 </div>

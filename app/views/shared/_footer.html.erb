@@ -1,31 +1,30 @@
-   <div class="container-fluid p-0">
-   <div class="footer">
-        <div class="row col-lg-6 col-md-6 col-sm-12 col-xs-1">
-          <ul class="d-flex p-0">
-          <a href="#">
-            <i class="fab fa-facebook-square"></i></a>
-          <a href="#">
-            <i class="fab fa-fw fa-twitter"></i></a>
-          <a href="#">
-            <i class="fab fa-fw fa-instagram"></i></a>
-          <a href="#">
-            <i class="fab fa-fw fa-github"></i></a>
-          </ul>
-        </div>
-        <div class="row d-flex justify-content-around">
-            <div class ="col-lg-6 col-sm-12">
-                <nav class=" nav d-flex nav-links col-12 col-md-12 col-xs-1">
-                    <%= link_to  "Inicio", root_path, class:"nav-link" %>
-                    <%= link_to  "Compra", wears_path, class: "nav-link" %>
-                    <%= link_to  "Nosotros", pages_who_path, class: "nav-link" %>
-                    <%= link_to  "Contacto", pages_contact_path, class: "nav-link" %>
-                    <%= link_to  "ayuda", pages_help_path, class: "nav-link"%>
-                </nav>
-            </div>
-            <div class="col-lg-6 col-sm-12 text-right">
-                <%= link_to image_tag("PNG.png"), root_path, class:"img_logo"%>
-            </div>
-        </div>
+<div class="footer">
+  <div class="container">
+    <div class="row col -lg-6 col-md-6 col-sm-12 col-xs-1">
+      <ul class="d-flex p-0">
+        <a href="#">
+        <i class="fab fa-facebook-square"></i></a>
+        <a href="#">
+        <i class="fab fa-fw fa-twitter"></i></a>
+        <a href="#">
+        <i class="fab fa-fw fa-instagram"></i></a>
+        <a href="#">
+        <i class="fab fa-fw fa-github"></i></a>
+      </ul>
     </div>
+    <div class="row">
+    <div class ="col-lg-6 col-sm-12">
+      <nav class=" nav d-flex nav-links col-12 col-md-12 col-xs-1">
+        <%= link_to  "Inicio", root_path, class:"nav-link" %>
+        <%= link_to  "Compra", wears_path, class: "nav-link" %>
+        <%= link_to  "Nosotros", pages_who_path, class: "nav-link" %>
+        <%= link_to  "Contacto", pages_contact_path, class: "nav-link" %>
+        <%= link_to  "ayuda", pages_help_path, class: "nav-link"%>
+      </nav>
+    </div>
+    <div class="col-lg-6 col-sm-12 text-right">
+      <%= link_to image_tag("PNG.png"), root_path, class:"img_logo"%>
+    </div>
+  </div>
 </div>
     <!--Footer falta que logo esté al lado derecho-->

@@ -39,10 +39,10 @@ class ApplicationController < ActionController::Base
       order = Order.create(monto: 0)
       session[:current_order_id] = order.id
     end
-
     # Devolver resultado explicito, definido
     return order
   end
+
 
   protected
 

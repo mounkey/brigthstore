@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_07_175524) do
+ActiveRecord::Schema.define(version: 2021_09_07_195939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,18 @@ ActiveRecord::Schema.define(version: 2021_09_07_175524) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "order_details", force: :cascade do |t|
+    t.string "metodopago"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.bigint "order_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["order_id"], name: "index_order_details_on_order_id"
+  end
+
   create_table "order_items", force: :cascade do |t|
     t.integer "price"
     t.integer "cantidad"
@@ -49,6 +61,7 @@ ActiveRecord::Schema.define(version: 2021_09_07_175524) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "order_id"
+    t.integer "total_price"
     t.index ["order_id"], name: "index_order_items_on_order_id"
     t.index ["wear_id"], name: "index_order_items_on_wear_id"
   end
@@ -56,6 +69,7 @@ ActiveRecord::Schema.define(version: 2021_09_07_175524) do
   create_table "orders", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.integer "monto"
+    
     t.date "date"
     t.string "metodopago"
     t.string "address"
@@ -64,6 +78,7 @@ ActiveRecord::Schema.define(version: 2021_09_07_175524) do
     t.string "country"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "status", default: 0
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -96,6 +111,7 @@ ActiveRecord::Schema.define(version: 2021_09_07_175524) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "order_details", "orders"
   add_foreign_key "order_items", "orders"
   add_foreign_key "order_items", "wears"
   add_foreign_key "orders", "users"
