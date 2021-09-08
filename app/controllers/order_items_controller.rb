@@ -1,21 +1,24 @@
 class OrderItemsController < ApplicationController
-  before_action :set_orderitems, only: [:destroy, :edit, :update, :show]
+  before_action :set_order_item, only: [:destroy, :edit, :update, :show]
   authorize @order_items
 
   def index
-    @order_items = Order_Items.all
+    @order_items = current_order.order_items
     #@order_items = policy_scope(order_item).order(created_at: :desc)
   end
 
   def new
-    @order_item = Order_Items.new
+    @order_item = current_order.order_items.new
   end
 
   def create
     record.user = user
-    @order_item = Order_Items.new(order_items_params)
+    @order_item = current_order.order_items.new(order_items_params)
+
     if @order_item.save
-      redirect_to @order_item
+      wear = @order_item.wear
+
+      redirect_to wear_path(id: @order_item.wear_id), notice: "#{wear.description} ha sido agregado en tu carrito de compra"
     else
       render :new
     end
@@ -29,9 +32,8 @@ class OrderItemsController < ApplicationController
 
   def update
     record.user = user
-    @order_item = Order_Items.new(order_items_params)
-    if @order.update
-      redirect_to @order_item
+    if @order_item.update(order_items_params)
+      redirect_to order_path(current_order), notice: "Has actualizado un item de tu carrito de compra"
     else
       render :edit
     end
@@ -40,14 +42,14 @@ class OrderItemsController < ApplicationController
   def destroy
     record.user = user
     if @order_item.destroy
-      redirect_to @order_item_path
+      redirect_to root_path, alert: "Has eliminado un item desde tu carrito de compra"
     end
   end
 
   private
 
-  def set_orderitems
-    @order_items = Order_Items.find(params[:id])
+  def set_order_item
+    @order_item = current_order.order_items.find(params[:id])
   end
 
   def order_items_params
