@@ -18,6 +18,7 @@ class CategoryPolicy < ApplicationPolicy
   def create?
     true
   end
+
   def show?
     false
   end
