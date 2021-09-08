@@ -11,7 +11,9 @@ class OrderItem < ApplicationRecord
   private
 
   def update_total_price
-    tprice = self.price * self.cantidad
-    update(total_price: tprice)
+    nprice = self.price * self.cantidad
+    self[:total_price] = nprice.to_i
+    save!
+    #self.update_attribute(total_price, nprice)
   end
 end

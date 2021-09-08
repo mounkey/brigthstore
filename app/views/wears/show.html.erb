@@ -1,26 +1,45 @@
 <div class="container">
-  <div class = "row cards">
-    <div class = "col-12 col-sm-12">
+  <div class="row cards">
+    <div class="col-12">
       <h2><%= "#{@wear.marca.capitalize} - #{@wear.category.nombre}" %></h2>
     </div>
-    <div class = "col-12 col-sm-6 col-lg-6">
-    <div class="text-center" style="width: 400px; height:300px;"> 
-      <% if @wear.photo.attached? %>
-        <%= cl_image_tag(@wear.photo.key, width: 400, height:300 ) %>
-      <% else %>
-        <%= image_tag ("PNG.png"), width:120, height:40 %>
-      <% end %>
-    </div>
-    </div>
-    <div class = "col-12 col-sm-6 col-lg-6">
 
-      
-      <%= link_to "seguir comprando", wears_path, class: "btn botones" %> <%= link_to  "comprar", wears_path, class: "btn botones"  %>
+    <div class = "col-12 col-sm-6">
+      <div class="text-center" style="width: 400px; height:300px;">
+        <% if @wear.photo.attached? %>
+          <%= cl_image_tag(@wear.photo.key, width: 400, height:300 ) %>
+        <% else %>
+          <%= image_tag ("PNG.png"), width:120, height:40 %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class = "col-12 col-md-6">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <%= link_to "seguir comprando", wears_path, class: "btn botones" %>
+        </div>
+        <div class="col-12 col-md-6">
+          <% if user_signed_in? %>
+            <%#= form_with(model: current_order.order_items.new, url: order_order_items_path, method: :post) do |f| %>
+            <%= form_with(model: [current_order, current_order.order_items.new]) do |f| %>
+              <%= f.hidden_field :order_id, value: current_order.id %>
+              <%= f.hidden_field :wear_id, value: @wear.id %>
+              <%= f.hidden_field :price, value: @wear.valor %>
+              <%= f.hidden_field :cantidad, value: "1" %>
+              <%= f.submit "Comprar", class: "btn btn-sm btn-primary" %>
+            <% end -%>
+          <% else %>
+            <%= link_to "Ingresa para comprar", new_user_session_path, class: "btn btn-sm btn-primary" %>
+          <% end -%>
+        </div>
+      </div>
+
+    </div>
       <p> 
-        <%=  "#{@wear.marca} - #{@wear.talla} - #{@wear.color} - #{@wear.descripcion} - #{@wear.valor} - #{@wear.category.nombre}"%> <%= link_to  "Modificar", edit_wear_path(@wear)%>  <%= link_to  "Eliminar", wear_path(@wear), method: :delete %>
+        <%= link_to  "Modificar", edit_wear_path(@wear)%>
+
       </p>
     </div>
-    
-      
   </div>
 </div>
