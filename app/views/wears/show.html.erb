@@ -36,37 +36,9 @@
       </div>
 
     </div>
-<<<<<<< HEAD
-    <div class = "col-12 col-sm-6 col-lg-6">
-      <%= link_to "seguir comprando", wears_path, class: "btn botones" %> <%= link_to  "comprar", wears_path, class: "btn botones"  %>
-      <p>
-        <%= @wear.marca%> <br/>
-        <%= @wear.talla%> <br/>
-        <%= @wear.color%> <br/>
-        <%= @wear.valor%> <br/>
-        <%= @wear.category.nombre%><br/><br/>
-        <%= @wear.descripcion%>
-        <br/>
-        <div class =" text-rigth">
-            <%= link_to  "Modificar", edit_wear_path(@wear), class: "btn botones"%> <%= link_to  "Eliminar", wear_path(@wear), method: :delete, class: "btn botones" %>
-        </div>
-||||||| 715a607
-    <div class = "col-12 col-sm-6 col-lg-6">
-
-      
-      <%= link_to "seguir comprando", wears_path, class: "btn botones" %> <%= link_to  "comprar", wears_path, class: "btn botones"  %>
-      <p> 
-        <%=  "#{@wear.marca} - #{@wear.talla} - #{@wear.color} - #{@wear.descripcion} - #{@wear.valor} - #{@wear.category.nombre}"%> <%= link_to  "Modificar", edit_wear_path(@wear)%>  <%= link_to  "Eliminar", wear_path(@wear), method: :delete %>
-=======
-
-
-
-
-
       <p> 
         <%= link_to  "Modificar", edit_wear_path(@wear)%>
 
->>>>>>> 5ef8b71bc119e89a8fbb6c5a1946a97e6879fa3f
       </p>
     </div>
   </div>

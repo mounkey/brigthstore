@@ -12,5 +12,6 @@ class OrderItem < ApplicationRecord
 
   def update_total_price
     self.total_price = self.price * self.cantidad
+    
   end
 end
