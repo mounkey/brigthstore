@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   resources :wears
 
-  resources :orders, only: %i[new update create destroy index]
+  resources :orders do
+    resources :order_items, only: %i[new create update destroy]
+  end
 
   devise_for :users
 

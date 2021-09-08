@@ -47,6 +47,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @wears = @category.wears
   end
 
   private
