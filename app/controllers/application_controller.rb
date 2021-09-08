@@ -17,30 +17,12 @@ class ApplicationController < ActionController::Base
 
   def current_order
     if current_user.present?
-      # recuperar la orden reciente
-      # necesitamos el ID or NIL porque session.current_order_id puede no existir
-      # osea, necesitamos SI o SI un resultado
-      recover_order_id = session[:current_order_id] || nil
-      # ahora podemos recuperar la orden desde base de datos
-      # buscar orden o crear en base de recover_order_id
-      order = if recover_order_id.present? && !recover_order_id.empty?
-                Order.find(recover_order_id)
-              else
-                order = Order.create(monto: 0)
-              end
-
-      # ahora hay que asignar la orden al usuario logeado
-      if order.user.nil?
-        order.user = current_user
-        order.save!
-      end
+      order = current_user.orders.where(status: "initialized").take
+      order = current_user.orders.create(monto: 0) if order.nil?
+      order
     else
-      # si usuario no esta logeado, crear una orden temporal
-      order = Order.create(monto: 0)
-      session[:current_order_id] = order.id
+      nil
     end
-    # Devolver resultado explicito, definido
-    return order
   end
 
   protected

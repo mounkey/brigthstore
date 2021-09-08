@@ -67,14 +67,21 @@ ActiveRecord::Schema.define(version: 2021_09_07_195939) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.bigint "user_id", null: false
     t.integer "monto"
+<<<<<<< HEAD
     t.date "date"
+||||||| 715a607
+    
+    t.date "date"
+=======
+    t.date "fecha"
+>>>>>>> 5ef8b71bc119e89a8fbb6c5a1946a97e6879fa3f
     t.string "metodopago"
     t.string "address"
     t.string "city"
     t.string "state"
     t.string "country"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "status", default: 0
