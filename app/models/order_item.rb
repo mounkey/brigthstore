@@ -5,13 +5,12 @@ class OrderItem < ApplicationRecord
   validates :price, presence: true
   validates :cantidad, presence: true
 
-  after_create_commit :update_total_price
-  after_update_commit :update_total_price
+  #after_create_commit :update_total_price
+  after_commit :update_total_price
 
   private
 
   def update_total_price
-    tprice = self.price * self.cantidad
-    update(total_price: tprice)
+    self.total_price = self.price * self.cantidad
   end
 end

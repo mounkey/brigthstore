@@ -1,20 +1,21 @@
 class OrderItemsController < ApplicationController
   before_action :set_order_item, only: [:destroy, :edit, :update]
-  authorize @order_items
-
+  before_action :authorized_user?, only: [:create, :update, :destroy]
+  skip_after_action :verify_authorized
 
   def new
     @order_item = current_order.order_items.new
+    #authorize @order_item
   end
 
   def create
-    record.user = user
     @order_item = current_order.order_items.new(order_items_params)
+    #authorize @order_item
 
     if @order_item.save
       wear = @order_item.wear
 
-      redirect_to wear_path(id: @order_item.wear_id), notice: "#{wear.description} ha sido agregado en tu carrito de compra"
+      redirect_to wear_path(id: @order_item.wear_id), notice: "#{wear.descripcion} ha sido agregado en tu carrito de compra"
     else
       render :new
     end
@@ -24,7 +25,7 @@ class OrderItemsController < ApplicationController
   end
 
   def update
-    record.user = user
+    #authorize @order_item
     if @order_item.update(order_items_params)
       redirect_to order_path(current_order), notice: "Has actualizado un item de tu carrito de compra"
     else
@@ -33,7 +34,7 @@ class OrderItemsController < ApplicationController
   end
 
   def destroy
-    record.user = user
+    #authorize @order_item
     if @order_item.destroy
       redirect_to root_path, alert: "Has eliminado un item desde tu carrito de compra"
     end
@@ -46,7 +47,13 @@ class OrderItemsController < ApplicationController
   end
 
   def order_items_params
-    params.require(:order_items).permit(:wear_id, :order_id, :price, :cantidad, :total_price)
+    params.require(:order_item).permit(:wear_id, :order_id, :price, :cantidad, :total_price)
+  end
+
+  def authorized_user?
+    if current_user != current_order.user
+      redirect_to root_path, alert: "No estas autorizado para esta acción"
+    end
   end
 
 end
