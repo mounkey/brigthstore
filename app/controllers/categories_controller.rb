@@ -39,7 +39,6 @@ class CategoriesController < ApplicationController
     authorize @category
 
     if @category.update(category_params)
-      # redirect_to @categoty
       redirect_to @category
     else
       render :edit
@@ -57,6 +56,6 @@ class CategoriesController < ApplicationController
   end
 
   def category_params
-    params.require(:category).permit(:nombre)
+    params.require(:category).permit(:nombre, :photo)
   end
 end
