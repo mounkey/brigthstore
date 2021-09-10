@@ -4,15 +4,52 @@
     <% @ids<<c.id %>
   <% end %>
   <h3>Categorias</h3>
+<<<<<<< HEAD
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <% Category.all.each do |c|%>
+        <div class="row">
+          <div class="col-12 col-md-12 picture_big">
+                hola2  
+=======
     <div class="row">
       <div class="col-12 col-md-6">
         <div class="row">   
           <div class="col-12 col-md-12 picture_big">
            <%= link_to image_tag("picturesManbig.png"), category_path(@ids[4]), class:"picture_big img-fluid" %>
+>>>>>>> 3cde31ef94aa91937e1b0a82904373d38c6a382c
           </div>
         </div>
         <div class="row">
           <div class="col-6 col-md6 picture_small">
+<<<<<<< HEAD
+          como estas 
+          </div>
+          <div class="col-6 col-md6 picture_small">
+          bien y tu
+          </div>
+        </div>      
+      </div>
+          <div class="col-12 col-md-6">
+        <div class="row">
+          <div class="col-12 col-md-12 picture_big">
+          <%= link_to cl_image_tag(c.photo), category_path(c), class:"picture_cat"%>     
+ 
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 col-md6 picture_small">
+          como 
+          </div>
+          <div class="col-6 col-md6 picture_small">
+          estas
+          </div>
+        </div>      
+      </div>
+      <%end%>
+  </div>
+</div>
+=======
             <%= link_to image_tag("picturesSalesmall.png"), category_path(@ids[0]), class:"picture_small img-fluid" %>
           </div>
           <div class="col-6 col-md6 picture_small">
@@ -38,3 +75,4 @@
     </div>
 </div>
 
+>>>>>>> 3cde31ef94aa91937e1b0a82904373d38c6a382c
