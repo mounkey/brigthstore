@@ -2,12 +2,13 @@
     background-color: rgb(163,221,203);
     height: auto;
     text-decoration: none;
-    padding: 0px 20px;
+    padding: 0px 10px 20px;
     color: white;
     font-size: 18px;
     font-family: 'Montserrat', sans-serif;
     width: 100%;
-    padding: 10px;
+    padding-top: 20px;
+    margin-top: 80px;
     }
     
     .footer i {
@@ -33,22 +34,4 @@
     .footer a:hover {
     color: #E5707E;
     }
-    
-    @media(max-width: 991px){
-        .banner{
-            width: 700px;}
-    };
-    
-    @media(max-width: 960px){
-        .banner{
-            width: 720px;}
-    };
-    @media(max-width: 720px){
-        .banner{
-            width: 500px;}
-    };
-    @media(max-width: 540px){
-        .banner{
-            width: 300px;}
-    };
     

@@ -1,0 +1,19 @@
+.picture_small {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding-bottom: 10px;
+}   
+
+.picture_small img {
+    border-radius: 20px;
+    max-width: 260px;
+    max-height: 190px;
+}
+
+@media(max-width: 991px){
+    .picture_small img{
+       width: 160px;
+       max-width:260px;
+       max-height: 190px;}
+};
