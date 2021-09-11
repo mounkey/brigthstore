@@ -5,6 +5,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  
 }
 
 .card-trip {
@@ -12,18 +13,18 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 180px;
-  height: 230px;
+  height: 320px;
   border: 2px solid #A3DDCB;
-
+  border-radius: 25px;
 }
 
 .img_cont{
-  height: 160px;
-  width: 180px;
+  height:229px;
+  width: 230px;
 }
 
 .img_card {
-  height: 160px;
+  height: 230px;
   width: 180px;
   object-fit: cover;
   object-position: center center;
@@ -50,8 +51,4 @@
   position: relative;
 }
 
-.card-trip.price{
-  position: absolute;
-  
-  top: -15px
-}
+
