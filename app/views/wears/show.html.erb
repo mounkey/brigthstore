@@ -1,10 +1,10 @@
+
 <div class="container">
-  <div class="row cards">
+  <div class="row cards ">
     <div class="col-12">
       <h2><%= "#{@wear.marca.capitalize} - #{@wear.category.nombre}" %></h2>
     </div>
-
-    <div class = "col-12 col-sm-6">
+    <div class = "col-12 col-sm-6 ">
       <div class="text-center" style="width: 400px; height:300px;">
         <% if @wear.photo.attached? %>
           <%= cl_image_tag(@wear.photo.key, width: 400, height:300 ) %>
@@ -17,7 +17,14 @@
     <div class = "col-12 col-md-6">
       <div class="row">
         <div class="col-12 col-md-6">
-          <%= link_to "seguir comprando", wears_path, class: "btn botones" %>
+          <%= link_to "seguir comprando", wears_path, class: "btn btn-sm botones" %><br/><br/>
+          <small><%= @wear.marca.capitalize %></small><br/>
+          <h4><%= @wear.talla.capitalize %></h4>
+          <h4><%= @wear.color.capitalize %></h4>
+          <h4><%= @wear.marca.capitalize %></h4>
+          <h4><%= @wear.descripcion.capitalize %></h4><br/>
+          <h1 style="color: #E5707E"> <%=  "$ #{@wear.valor}" %></h1>
+          
         </div>
         <div class="col-12 col-md-6">
           <% if user_signed_in? %>
@@ -27,11 +34,12 @@
               <%= f.hidden_field :wear_id, value: @wear.id %>
               <%= f.hidden_field :price, value: @wear.valor %>
               <%= f.hidden_field :cantidad, value: "1" %>
-              <%= f.submit "Comprar", class: "btn btn-sm btn-primary" %>
+              <%= f.submit "Comprar", class: "btn btn-sm botones" %>
             <% end -%>
           <% else %>
             <%= link_to "Ingresa para comprar", new_user_session_path, class: "btn btn-sm btn-primary" %>
           <% end -%>
+          
         </div>
       </div>
       <p> 
@@ -41,3 +49,4 @@
     </div>
   </div>
 </div>
+<%= render partial: "shared/categories"%>
