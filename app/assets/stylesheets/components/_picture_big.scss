@@ -3,11 +3,20 @@
     height: 320px;
     border-radius: 20px;
     display: flex;
+    padding-bottom: 20px;
 }
 
 .picture_big img {
     border-radius: 20px;
-    max-height: 320px;
-    max-width: 560px;
+    max-width: 540px;
 }
+
+@media(max-width: 991px){
+    .picture_big img{
+        width: 340px;
+        max-height: 200px;
+    }
+    .picture_big{
+        width: 540px;}
+};
 
