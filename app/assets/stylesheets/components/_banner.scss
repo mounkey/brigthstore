@@ -2,57 +2,42 @@
     background-image: url(asset-path('banner.png'));
     width: 100%;
     background-size: 100%;
-    height: auto;
+    height: 100%;
     text-align: left;
     line-height: 5px;
     object-fit: cover;
     background-repeat: no-repeat;
     display:block;
-    padding-left: 20px;
-    margin-bottom: 60px;
+    padding-left: 85px;
+    padding-bottom: 120px;
 }
 
 .banner h1 {
+    width: 700px;
     padding-left: 19px;
-    padding-top: 200px;
-    width: 600px;
+    padding-top: 180px;
+    width: 450px;
     margin:0px;
     color: #000000;
-    font-size: 29px;
+    font-size: 44px;
 }
 
 .banner h2 {
     margin: 20px;
     color: #E5707E;
-    font-size: 27px;
+    font-size: 44px;
 }
 
 .banner p {
     margin: 20px;
+    width: 590px;
+    height: 65px;
     color: grey;
-    font-size: 12px;
+    font-size: 26px;
     padding-right: 0px;
-    line-height:20px;
-    padding-bottom: 140px;
+    line-height:31.69px;
+    
 }
-
-@media(max-width: 1080px){
-    .banner{
-        h1{
-            padding-top: 130px;
-            width:120%;
-            font-size: 25px;
-        }
-        h2{
-            font-size: 22px;
-        }
-        p{
-            width: 150%;
-            font-size: 12px;
-            padding-top:0px;
-        }
-    }
-};
 
 @media(max-width: 991px){
     .banner{
@@ -60,7 +45,7 @@
         padding-top: 80px;
         h1{
             padding-top: 30px;
-            padding-left: 0px;
+            padding-left: 50px;
             width: 120%;
             font-size: 22px;
         }
@@ -69,13 +54,17 @@
             width: 150%;
             margin: 0px;
             padding-top: 10px;
+            padding-left: 50px;
         }
         p{
-            width: 300px;
+            width: 320px;
             font-size: 10px;
             margin: 0px;
             padding-top: 10px;
-            padding-bottom: 30px;
+            padding-left: 50px;
+        }
+        img{
+            max-height: 250px;
         }
     }
 };
@@ -86,18 +75,18 @@
         padding-top: 80px;
         h1{
             padding-top: 30px;
-            padding-left: 0px;
-            width: 100%;
+            padding-left: 50px;
+            width: 130%;
             font-size: 21px;
         }
         h2{
-            font-size: 17px;
+            font-size: 21px;
             width: 150%;
             margin: 0px;
             padding-top: 10px;
         }
         p{
-            width: 300px;
+            width: 350px;
             font-size: 10px;
             margin: 0px;
             padding-top: 10px;
@@ -113,18 +102,22 @@
         padding-left:0px;
         h1{
             width:46%;
-            font-size: 20.5px;
+            font-size: 18px;
             margin: 0px;
+            padding-left: 20px;
         }
         h2{
-            font-size: 19px;
+            font-size: 18px;
             width: 150%;
             padding-top: 5px;
+            padding-left: 20px;
         }
         p{
             width: 300px;
             font-size: 10px;
             padding-bottom: 40px;
+            padding-left: 20px;
+            padding-top: 5px;
         }
     }
 };
@@ -135,19 +128,22 @@
         padding-top: 30px;
         padding-left:0px;
         h1{
-            width:44%;
+            width:40%;
             font-size: 15px;
+            padding-left:10px;
         }
         h2{
             font-size: 13px;
             width: 150%;
             padding-top: 5px;
+            padding-left:10px;
         }
         p{
             width: 300px;
             font-size: 8px;
             padding-bottom: 40px;
             padding-top:1px;
+            padding-left: 10px;
         }
     }
 };
