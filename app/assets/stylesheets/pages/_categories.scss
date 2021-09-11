@@ -1,15 +1,10 @@
 .picture_big {
     width: 400px;
     height: 320px;
-    border-radius: 8px;
+    border-bottom-left-radius: 10px; 
 }
 
 .picture_small {
     width: 280px;
     height: 190px;
-    border-radius: 8px;
 }   
-
-.picture_cat {
-    border-radius: 8px;
-}
