@@ -5,21 +5,22 @@
     <% @ids<<c.id %>
     <% @img<<c.imagen %>
   <% end %>
-  <h3><strong>Categorias</h3>
+  <h3 class="pb-4"><strong>Categorias</strong></h3>
     <div class="row">
       <div class="col-12 col-md-6">
         <div class="row">   
-          <div class="col-12 col-md-12">
+          <div class="col-12 col-md-12 picture_big">
+          <a>
             <%= link_to image_tag(@img[0], class: "picture_big img-fluid"), category_path(@ids[0]) %>
+          </a>
           </div>
         </div>
         <div class="row">
           <div class="col-6 col-md-6 picture_small">
-            <%= link_to image_tag(@img[1], class: "picture_big im
-            g-fluid"), category_path(@ids[1]) %>
+            <%= link_to image_tag(@img[1], class: "img-fluid"), category_path(@ids[1]) %>
           </div>
           <div class="col-6 col-md-6 picture_small">
-            <%= link_to image_tag(@img[2], class: "picture_big img-fluid"), category_path(@ids[2]) %>
+            <%= link_to image_tag(@img[2], class: "img-fluid"), category_path(@ids[2]) %>
           </div>
         </div>      
       </div>
@@ -31,10 +32,10 @@
       </div>
         <div class="row">
           <div class="col-6 col-md-6 picture_small">
-            <%= link_to image_tag(@img[4],class: "picture_big img-fluid"), category_path(@ids[4]) %>
+            <%= link_to image_tag(@img[4],class: "img-fluid"), category_path(@ids[4]) %>
           </div>
           <div class="col-6 col-md-6 picture_small">
-            <%= link_to image_tag(@img[5], class: "picture_big img-fluid"), category_path(@ids[5]) %> 
+            <%= link_to image_tag(@img[5], class: "img-fluid"), category_path(@ids[5]) %> 
           </div>
         </div>      
       </div>
