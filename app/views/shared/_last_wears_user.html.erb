@@ -1,29 +1,25 @@
 <div class="container">
   <h3 class="pb-4"><strong>Ultimas Ropas de Usuarios</strong></h3>
-  <div class = "row">
+  <div class="row">
   <% Wear.order(:user_id ).last(6).each do |w| %> 
-    <div class = "col-6 col-md-2">
+    <div class="col-6 col-md-2">
       <div class="card-trip">
         <div>
           <% if w.photo.attached?%>
-            <%= link_to cl_image_tag(w.photo.key, class:"img_card img-fluid" ), wear_path(w) %>
+            <%= link_to cl_image_tag(w.photo.key, class:"card-trip-img"), wear_path(w) %>
           <%else%>
-            <%= link_to image_tag("PNG.png", class:'img_card img-fluid'), wear_path(w) %>
+            <%= link_to image_tag("PNG.png", class:"card-trip-img"), wear_path(w) %>
           <% end %>
         </div>
-      <div class="card-trip-infos">
-        <div >
-          <h2 id="price" class= "btn botones_price"><%="$ #{w.valor}"%></h2>
-        </div>
-        <div>
-          <h2><%= "Marca: #{w.marca} " %></h2>
-          <p><%= w.descripcion%></p>
-        </div>
-      
+          <div class="card-trip-infos">
+            <a id="price" class="btn botones_price"><%="$ #{w.valor}"%></a>
+          </div>
+          <div>
+            <h2><%= "Marca: #{w.marca} " %></h2>
+            <p><%= w.descripcion%></p>
+          </div>
       </div>
-      </div>
-      </div>
+    </div>
   <% end %>
   </div>
 </div>
-<br/>
