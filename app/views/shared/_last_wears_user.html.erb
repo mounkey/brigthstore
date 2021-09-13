@@ -1,5 +1,5 @@
 <div class="container">
-  <h1> Ultima Ropas Ingresadas Por Usuarios  </h1>
+  <h3 class="pb-4"><strong>Ultimas Ropas de Usuarios</strong></h3>
   <div class = "row">
   <% Wear.order(:user_id ).last(6).each do |w| %> 
     <div class = "col-6 col-md-2">
@@ -13,7 +13,7 @@
         </div>
       <div class="card-trip-infos">
         <div >
-          <h2 id="price" class= "btn botonesprice"><%="$ #{w.valor}"%></h2>
+          <h2 id="price" class= "btn botones_price"><%="$ #{w.valor}"%></h2>
         </div>
         <div>
           <h2><%= "Marca: #{w.marca} " %></h2>

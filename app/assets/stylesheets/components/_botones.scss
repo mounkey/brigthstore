@@ -1,4 +1,4 @@
-.botones{
+.botones {
   background-color: #E5707E;
   color: white;
   border:none;
@@ -7,11 +7,11 @@
   height: 40px;
 }
 
-.botones :hover{
+.botones :hover {
   color: white;
 }
 
-.botones_link{
+.botones_link {
   background-color: #E5707E;
   color: white;
   border:none;
@@ -20,12 +20,14 @@
   height: 40px;
 }
 
-.botonesprice{
+.botones_price {
   background-color: #E5707E;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
   color: white;
   border:none;
   border-radius: 5px;
-  width: 80px;
-  height: 25px;
+  width: 110px;
+  height: 30px;
 }
 
