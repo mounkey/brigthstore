@@ -4,27 +4,21 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
-  align-items: center;  
+  align-items: center;
 }
 
 .card-trip {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.10);
   width: 180px;
-  height: 320px;
-  border: 2px solid #A3DDCB;
-  border-radius: 25px;
+  height: 300px;
+  border-radius: 20px;
 }
 
-.img_cont{
-  height:229px;
-  width: 230px;
-}
-
-.img_card {
-  height: 230px;
-  width: 180px;
+.card-trip img {
+  height: 200px;
+  width: 100%;
   object-fit: cover;
   object-position: center center;
 }
@@ -33,19 +27,29 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  padding-left: 10px;
 }
 
 .card-trip p {
+  width: 210px;
+  max-width: 180px;
+  height: 60px;
   font-size: 12px;
   opacity: .7;
   margin: 0;
+  padding-left: 10px;
 }
 
+.card-trip-infos {
+  width: 110px;
+  height: 30px;
+  margin: auto;
+}
 
 .card-trip .card-trip-infos {
-  padding: 16px;
+  padding: 0px 10px 16px 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content:inherit;
   align-items: flex-end;
   position: relative;
 }
