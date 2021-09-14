@@ -68,6 +68,33 @@
   border: 2px solid #A3DDCB;
 }
 
+.card-body {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.10);
+  width: 180px;
+  height: 100%;
+  border-radius: 20px;
+  display: block;
+  margin-left:0;
+}
+
+.card-body img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.card-body h5 {
+  padding-top: 5px;
+  font-weight: bold;
+}
+
+.card-body p {
+  padding-top: 0px;
+}
+=======
 .card-product_carrito {
   margin-top: 15px;
   overflow: hidden;
@@ -108,4 +135,3 @@
 .carrito_price{
   color:#E5707E;
 }
-
