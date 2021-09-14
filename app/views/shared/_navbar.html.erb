@@ -12,15 +12,15 @@
           </div>
         </div>
       </div>
-      <div class = "col-6 col-md-3 col-lg-4 col-xl-4 text-rigth ">
+      <div class = "col-6 col-md-3 col-lg-3 col-xl-3 text-end ">
         <% if user_signed_in? %>
           <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" /> 
-          <% Order.where(user_id: @currentUser).each do |o|%>
-            <%= link_to "Carro de Compra", order_path(o.id), class: "btn botones" %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn botones" %> <br/>
+          <% current_user.orders.each do |o| %>
+            <%= link_to "Carro", order_path(o.id), class: "btn botones" %>
           <% end %>
-          <%= link_to "Logout", destroy_user_session_path, method: :delete,  class: "btn botones" %>
         <% else %>
-          <%= link_to  "Ingresar", user_session_path, class: "btn botones" %>
+          <%= link_to  "Ingresar", user_session_path, class: "btn botones"%>
         <% end %>
       </div>
     </div>

@@ -4,27 +4,21 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
-  align-items: center;  
+  align-items: center;
 }
 
 .card-trip {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.10);
   width: 180px;
-  height: 320px;
-  border: 2px solid #A3DDCB;
-  border-radius: 25px;
+  height: 300px;
+  border-radius: 20px;
 }
 
-.img_cont{
-  height:229px;
-  width: 230px;
-}
-
-.img_card {
-  height: 230px;
-  width: 180px;
+.card-trip img {
+  height: 200px;
+  width: 100%;
   object-fit: cover;
   object-position: center center;
 }
@@ -33,19 +27,29 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  padding-left: 10px;
 }
 
 .card-trip p {
+  width: 210px;
+  max-width: 180px;
+  height: 60px;
   font-size: 12px;
   opacity: .7;
   margin: 0;
+  padding-left: 10px;
 }
 
+.card-trip-infos {
+  width: 110px;
+  height: 30px;
+  margin: auto;
+}
 
 .card-trip .card-trip-infos {
-  padding: 16px;
+  padding: 0px 10px 16px 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content:inherit;
   align-items: flex-end;
   position: relative;
 }
@@ -62,4 +66,72 @@
   align-items: center;
   border-radius: 15px;
   border: 2px solid #A3DDCB;
+}
+
+.card-body {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.10);
+  width: 180px;
+  height: 100%;
+  border-radius: 20px;
+  display: block;
+  margin-left:0;
+}
+
+.card-body img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.card-body h5 {
+  padding-top: 5px;
+  font-weight: bold;
+}
+
+.card-body p {
+  padding-top: 0px;
+}
+
+.card-product_carrito {
+  margin-top: 15px;
+  overflow: hidden;
+  height: 120px;
+  width: 100%;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.carrito_img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.card-product_carrito h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product_carrito p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product_carrito .card-product-infos {
+  padding: 25px;
+  width: 95%;
+}
+
+.carrito_price{
+  color:#E5707E;
 }
