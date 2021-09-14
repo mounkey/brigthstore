@@ -94,3 +94,44 @@
 .card-body p {
   padding-top: 0px;
 }
+=======
+.card-product_carrito {
+  margin-top: 15px;
+  overflow: hidden;
+  height: 120px;
+  width: 100%;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.carrito_img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.card-product_carrito h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product_carrito p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product_carrito .card-product-infos {
+  padding: 25px;
+  width: 95%;
+}
+
+.carrito_price{
+  color:#E5707E;
+}
