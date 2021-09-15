@@ -40,13 +40,32 @@ class OrderItemsController < ApplicationController
     end
   end
   
+  # Juan Pablo, ya tienes el order_item
+  # lo buscaste en set_order_item desde before_action
   def suma
-    ord = OrderItem.find_by(@order)
-    cant = ord.cantidad.to_i + 1
-    OrderItem.update_attribute(cantidad: cant)
-    redirect_to order_path
+    # ord = OrderItem.find_by(@order) # que tratas de encontar? https://api.rubyonrails.org/classes/ActiveRecord/FinderMethods.html#method-i-find_by
+    # la orden con cual trabajas es current_order, la seteamos en ApplicationController#current_order
+    # columna 'cantidad' en base datos dentro de la tabla 'order_items' YA tiene que ser Integer
+    # cant = @order_item.cantidad + 1 # eso es mala manera 
+    @order_items.cantidad += 1 # eso es lo que buscas (Clase 02-Flows & Arrays)
+
+    # no se puede redireccionar sin verificar si se guardo o no
+    # redirect_to order_path # tampoco así! El path 'order_path' te va a dar un error, porque nunca le pasaste el ID de la orden a la cual lo rediccionas
+    # por lo tanto:
+    if @order_item.save
+      # también hay que notificar al cliente que se realizo correctamente la acción
+      redirect_to order_path(current_order), notice: "Bingo! Agregaste un item mas!"
+    else
+      # que pasa si se pudó agregar?
+      # logicamente, es redireccionar a la pagina de donde se inicio el proceso de sumar
+      # es decir, pagina donde clickeaste ese link
+      redirecto_to order_path(current_order), alert: "Sorry, my friend, algo paso mal"
+    end
   end
 
+  # Aca pasa lo mismo
+  # Este metodo necesita el mismo refactoring
+  # Si llegas a tener tiempo y ganas, pensá como podes utilizar 1 metodo en vez de dos diferentes
   def resta
     order = @order.find_by(set_order)
     cant = order.cantidad.to_i - 1
