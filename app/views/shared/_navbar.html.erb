@@ -4,7 +4,7 @@
       <div class = "col-12 col-md-3 col-lg-3 col-xl-3 text-start">
         <%= link_to image_tag("PNG.png"), root_path, class:"img_logo"%>
       </div>
-      <div class="col-6 col-md-6 col-lg-6 col-xl-6 text-center">
+      <div class="col-6 col-md-5 col-lg-5 col-xl-5 text-center">
         <div class ="container-fluid">
           <div class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" readonly>
@@ -12,14 +12,18 @@
           </div>
         </div>
       </div>
-      <div class = "col-6 col-md-3 col-lg-3 col-xl-3 text-end ">
+      <div class = "col-6 col-md-4 col-lg-4 col-xl-4">
         <% if user_signed_in? %>
-          <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" /> 
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn botones" %> <br/>
-          <% current_user.orders.each do |o| %>
-            <%= link_to "Carro", order_path(o.id), class: "btn botones" %>
-          <% end %>
-        <% else %>
+          <div class="container-fluid">
+            <div class= "d-flex">
+              <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" /> 
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn botones" %> <br/>
+              <% current_user.orders.each do |o| %>
+              <%= link_to "Carro", order_path(o.id), class: "btn botones" %>
+              <% end %>
+            </div>
+          </div>
+          <% else %>
           <%= link_to  "Ingresar", user_session_path, class: "btn botones"%>
         <% end %>
       </div>
