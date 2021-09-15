@@ -1,3 +1,46 @@
 <div class="container">
-  <h1>Contact</h1>
+<br>
+  <h3 class="pb-4"><strong>Formulario Contacto</strong></h3>
 </div>
+<form class="container col-form-label">
+  <div class="row">
+    <div class="col-4">
+      <input type="text" class="form-control" placeholder="Nombre">
+    </div>
+    <div class="col-4">
+      <input type="text" class="form-control" placeholder="Apellido">
+    </div>
+    <div class="col-4">
+      <input type="text" class="form-control" placeholder="Correo Electronico">
+    </div>
+  </div>
+  <br>
+  <div class="form-row align-items-center">
+    <div class="col-auto my-1">
+      <label class="mr-sm-2" for="inlineFormCustomSelect">Motivo del Contacto</label>
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <option selected>Opciones...</option>
+        <option value="1">Contratar Servicio</option>
+        <option value="2">Despacho de Pedido</option>
+        <option value="3">Sugerencia</option>
+        <option value="4">Reclamo</option>
+
+      </select>
+    </div>
+  <br>
+  <div class="form-group col-12">
+    <label for="exampleFormControlTextarea1">Comentario</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <br>
+  <div class="col-auto my-1">
+      <div class="custom-control custom-checkbox mr-sm-2">
+        <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+        <label class="custom-control-label" for="customControlAutosizing">Responderme por Telefono</label>
+      </div>
+    </div>
+    <div class="col-auto my-1">
+      <button type="submit" class="btn botones">Enviar</button>
+    </div>
+  </div>
+</form>
