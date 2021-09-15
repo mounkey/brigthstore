@@ -36,14 +36,14 @@ class OrderItemsController < ApplicationController
   def destroy
     #authorize @order_item
     if @order_item.destroy
-      redirect_to root_path, alert: "Has eliminado un item desde tu carrito de compra"
+      redirect_to order_path, alert: "Has eliminado un item desde tu carrito de compra"
     end
   end
 
   private
 
   def set_order_item
-    @order_item = current_order.order_items.find(params[:id])
+    @order_item = current_order.order_items.find(params[:order_id])
   end
 
   def order_items_params
