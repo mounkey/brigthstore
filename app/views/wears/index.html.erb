@@ -1,11 +1,11 @@
 <br>
   <div class="container">
-    <h3 class="pb-4"><strong>Tienda Virtual</strong></h1>
+    <h3 class="pb-4"><strong>Tienda Virtual</strong></h3>
   </div>
   <div class="container d-flex">
-  <% @wears.each do |w| %>
+    <% @wears.each do |w| %>
     <div class="row">
-      <div class= "col-2 col-md-3">
+      <div class="col-2 col-md-3">
         <div class="card-body">
           <% if w.photo.attached? %>
             <%= link_to cl_image_tag(w.photo.key ), wear_path(w) %>
