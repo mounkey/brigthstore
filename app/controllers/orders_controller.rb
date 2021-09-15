@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
- before_action :set_order, only: [:destroy, :show, :update, :edit]
-  
+  before_action :set_order, only: [:destroy, :show, :update, :edit]
+
   def index
     @orders = Order.all
   end
@@ -38,27 +38,13 @@ class OrdersController < ApplicationController
     end
   end
 
-  def suma
-    order = @order.find_by(set_order)
-    cant = order.cantidad.to_i + 1
-    order.update_attribute :cantidad, cant
-  end
-  
-  def resta
-    order = @order.find_by(set_order)
-    cant = order.cantidad.to_i - 1
-    order.update_attribute :cantidad, cant
-  end
-
   private
 
   def set_order
     @order = Order.find(params[:id])
-  end 
+  end
 
   def order_params
     params.require(:order).permit(:monto, :fecha, :order_detail, :order_detail_id)
   end
-
-  
 end

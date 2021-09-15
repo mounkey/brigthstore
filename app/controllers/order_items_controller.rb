@@ -1,5 +1,5 @@
 class OrderItemsController < ApplicationController
-  before_action :set_order_item, only: [:destroy, :edit, :update]
+  before_action :set_order_item, only: [:destroy, :edit, :update, :suma, :resta]
   before_action :authorized_user?, only: [:create, :update, :destroy]
   skip_after_action :verify_authorized
 
@@ -39,6 +39,20 @@ class OrderItemsController < ApplicationController
       redirect_to order_path, alert: "Has eliminado un item desde tu carrito de compra"
     end
   end
+  
+  def suma
+    ord = OrderItem.find_by(@order)
+    cant = ord.cantidad.to_i + 1
+    OrderItem.update_attribute(cantidad: cant)
+    redirect_to order_path
+  end
+
+  def resta
+    order = @order.find_by(set_order)
+    cant = order.cantidad.to_i - 1
+    order.update_attribute :cantidad, cant
+  end
+
 
   private
 

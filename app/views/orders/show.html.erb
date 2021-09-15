@@ -27,13 +27,13 @@
                 </div>
                 <div class = "container-fluid d-flex">
                   <div class= "minicard_cant ">
-                    <%= link_to  "+", order_path(order), class: "boton_carrito" %>
+                    <%= link_to  "+", suma_path(order_item), class: "boton_carrito" %>
                   </div>
                   <div class= "minicard_cant ">
                     <%= order_items.cantidad %>
                   </div>
                   <div class= "minicard_cant ">
-                    <%= link_to  "-", order_path(order), class: "boton_carrito" %>
+                    <%= link_to  "-", resta_path(), class: "boton_carrito" %>
                   </div>
                 </div>
               </div>
