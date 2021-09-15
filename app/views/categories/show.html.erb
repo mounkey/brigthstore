@@ -1,23 +1,23 @@
+<br>
 <div class="container">
-  <div class="row">
-    <div class="col-12">
-      <%= content_tag(:h1, "Categoría: #{@category.nombre}") %>
-    </div>
-  </div>
-
-  <div class="row mt-3">
-    <% if @wears.present? %>
-      <% @wears.each do |wear| %>
-        <div class="col-4">
-          <% if wear.photo.attached? %>
-            <%= link_to cl_image_tag(wear.photo.key) , wear_path(wear), width: 60, heigth:60%> 
-          <% else %>
-            <%= link_to image_tag("PNG.png") , wear_path(wear),width: 60, heigth:60 %>
-          <% end %>
+  <h3 class="pb-4"><%= content_tag(:h3, "Categoría: #{@category.nombre},") %></h3>
+</div>
+<div class="container d-flex">
+  <% if @wears.present? %>
+  <% @wears.each do |wear| %>
+    <div class="row">
+      <div class="col-2 col-md-3">
+        <div class="card-body">
+            <% if wear.photo.attached? %>
+              <%= link_to cl_image_tag(wear.photo.key) , wear_path(wear) %> 
+            <% else %>
+              <%= link_to image_tag("PNG.png") , wear_path(wear) %>
+            <% end %>
         </div>
-      <% end -%>
-    <% end -%>
-  </div>
+      </div> 
+    </div> 
+  <% end -%>
+  <% end -%>
 </div>
 
 <div class="container mt-3">

@@ -72,27 +72,40 @@
   overflow: hidden;
   background: white;
   box-shadow: 0px 4px 4px rgba(0,0,0,0.10);
-  width: 180px;
+  width: 172px;
   height: 100%;
   border-radius: 20px;
-  display: block;
-  margin-left:0;
+  margin-left: 0px;
+  margin-right: 10px;
+  padding: 10px;
 }
 
 .card-body img {
-  height: 200px;
+  height: 160px;
   width: 100%;
   object-fit: cover;
   object-position: center center;
+  border-radius: 5px;  
 }
 
 .card-body h5 {
   padding-top: 5px;
   font-weight: bold;
+  max-width: 180px;
+  max-height: 40px;
+  overflow: hidden;
 }
 
 .card-body p {
-  padding-top: 0px;
+  max-width: 180px;
+  max-height: 20px;
+  overflow: hidden;
+  padding: 0px 0px 0px 0px;
+}
+
+.card-body-infos {
+  width: 180px;
+  padding: 0px;
 }
 
 .card-product_carrito {

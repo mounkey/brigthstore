@@ -1,10 +1,13 @@
 <div class= "container">
-  <h1>Categorias</h1>
+<br>
+<h3 class="pb-4"><strong>Categorias</strong></h3>
+<div class="container">
   <ul>
   <% @categories.each do |category| %>
-    <li><%= link_to category.nombre, category_path(category) %></li>
+  <%= link_to category.nombre, category_path(category), class: "btn botones" %>
   <% end %>
-  |<%= link_to  "Nueva categoria...", 
-    new_category_path %>|
+  <%= link_to  "Nueva categoria...",
+    new_category_path, class: "btn botones" %>
   </ul>
+</div>
 </div>
