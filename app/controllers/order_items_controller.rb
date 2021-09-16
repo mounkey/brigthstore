@@ -39,15 +39,15 @@ class OrderItemsController < ApplicationController
       redirect_to order_path, alert: "Has eliminado un item desde tu carrito de compra"
     end
   end
-  
+
   # Juan Pablo, ya tienes el order_item
   # lo buscaste en set_order_item desde before_action
   def suma
-    # ord = OrderItem.find_by(@order) # que tratas de encontar? https://api.rubyonrails.org/classes/ActiveRecord/FinderMethods.html#method-i-find_by
+    # ord = OrderItem.find_by(@order) # que tratas de encontar? https://api.rubyonrails.org/classes/ActiveReczord/FinderMethods.html#method-i-find_by
     # la orden con cual trabajas es current_order, la seteamos en ApplicationController#current_order
     # columna 'cantidad' en base datos dentro de la tabla 'order_items' YA tiene que ser Integer
-    # cant = @order_item.cantidad + 1 # eso es mala manera 
-    @order_items.cantidad += 1 # eso es lo que buscas (Clase 02-Flows & Arrays)
+    # cant = @order_item.cantidad + 1 # eso es mala manera
+    @order_item.cantidad += 1 # eso es lo que buscas (Clase 02-Flows & Arrays)
 
     # no se puede redireccionar sin verificar si se guardo o no
     # redirect_to order_path # tampoco así! El path 'order_path' te va a dar un error, porque nunca le pasaste el ID de la orden a la cual lo rediccionas
@@ -61,6 +61,8 @@ class OrderItemsController < ApplicationController
       # es decir, pagina donde clickeaste ese link
       redirecto_to order_path(current_order), alert: "Sorry, my friend, algo paso mal"
     end
+    raise
+
   end
 
   # Aca pasa lo mismo
@@ -76,7 +78,7 @@ class OrderItemsController < ApplicationController
   private
 
   def set_order_item
-    @order_item = current_order.order_items.find(params[:order_id])
+    @order_item = current_order.find(params[:order_id])
   end
 
   def order_items_params
@@ -88,5 +90,4 @@ class OrderItemsController < ApplicationController
       redirect_to root_path, alert: "No estas autorizado para esta acción"
     end
   end
-
-end
+ end

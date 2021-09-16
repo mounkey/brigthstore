@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   get "/pages/who", to:"pages#who", as: :pages_who
   get "/pages/help", to:"pages#help", as: :pages_help
 
-  get "/order/:id/order_items/:id", to: "order_items#suma", as: :suma
-  get "/orders/:id", to: "order_items#resta", as: :resta
+  get "/order/:id", to: "order_items#suma", as: :suma
+  get "/order/:id", to: "order_items#resta", as: :resta
 
   
   
