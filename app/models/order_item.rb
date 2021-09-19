@@ -5,8 +5,8 @@ class OrderItem < ApplicationRecord
   validates :price, presence: true
   validates :cantidad, presence: true
 
-  after_create_commit :update_total_price
-  after_update_commit :update_total_price
+  #after_create_commit :update_total_price
+  #after_update_commit :update_total_price
 
   private
 
