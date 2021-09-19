@@ -47,12 +47,21 @@ class OrderItemsController < ApplicationController
     # la orden con cual trabajas es current_order, la seteamos en ApplicationController#current_order
     # columna 'cantidad' en base datos dentro de la tabla 'order_items' YA tiene que ser Integer
     # cant = @order_item.cantidad + 1 # eso es mala manera
-    @order_item.cantidad += 1 # eso es lo que buscas (Clase 02-Flows & Arrays)
+    case params[:sel]
+    when '1'
+      @order_item.cantidad += 1
+    when '2'
+      @order_item.cantidad -= 1
+    end
+
+
+     # eso es lo que buscas (Clase 02-Flows & Arrays)
 
     # no se puede redireccionar sin verificar si se guardo o no
     # redirect_to order_path # tampoco así! El path 'order_path' te va a dar un error, porque nunca le pasaste el ID de la orden a la cual lo rediccionas
     # por lo tanto:
     if @order_item.save
+      price_all
       # también hay que notificar al cliente que se realizo correctamente la acción
       redirect_to order_path(current_order), notice: "Bingo! Agregaste un item mas!"
     else
@@ -61,24 +70,17 @@ class OrderItemsController < ApplicationController
       # es decir, pagina donde clickeaste ese link
       redirecto_to order_path(current_order), alert: "Sorry, my friend, algo paso mal"
     end
-    raise
-
   end
+
 
   # Aca pasa lo mismo
   # Este metodo necesita el mismo refactoring
   # Si llegas a tener tiempo y ganas, pensá como podes utilizar 1 metodo en vez de dos diferentes
-  def resta
-    order = @order.find_by(set_order)
-    cant = order.cantidad.to_i - 1
-    order.update_attribute :cantidad, cant
-  end
-
-
+  
   private
 
   def set_order_item
-    @order_item = current_order.find(params[:order_id])
+    @order_item = current_order.order_items.find(params[:order_id])
   end
 
   def order_items_params
@@ -89,5 +91,13 @@ class OrderItemsController < ApplicationController
     if current_user != current_order.user
       redirect_to root_path, alert: "No estas autorizado para esta acción"
     end
+  end
+
+  def price_all
+    price = @order_item.price * @order_item.cantidad
+    @order = current_order
+    @order.monto = 0
+    @order.monto += price
+    @order.save
   end
  end

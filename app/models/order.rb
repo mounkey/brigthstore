@@ -9,8 +9,8 @@ class Order < ApplicationRecord
   # order.initialized! = setear status nuevo (order.pending!)
   # order.pending? = preguntar el status, => true o false
 
-  after_create_commit :update_order_subtotal
-  after_update_commit :update_order_subtotal
+  #after_create_commit :update_order_subtotal
+  #after_update_commit :update_order_subtotal
 
   private
 
