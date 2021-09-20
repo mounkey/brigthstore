@@ -20,7 +20,7 @@
         <% if user_signed_in? %>
           <div class="container-fluid">
             <div class= "d-flex">
-              
+               <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
               <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn botones" %> <br/>
               <% current_user.orders.each do |o| %>
               <%= link_to "Carro", order_path(o.id), class: "btn botones" %>
