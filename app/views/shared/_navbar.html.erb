@@ -8,7 +8,7 @@
         <div class ="container-fluid">
           <div class="d-flex">
             <%= simple_form_for :wears_search, method: :get, :html => {class: 'form'} do |f| %>
-              <%= f.input :marca , placeholder: "Buscar" %>
+              <%= f.input :marca , placeholder: "Buscar", label: false %>
               <%= f.submit "Buscar", class: "btn botones" %>
             <%end%>
           </div>
