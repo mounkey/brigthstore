@@ -25,18 +25,18 @@
                         <div>
                            <%= link_to image_tag("trash.png"), order_order_item_path(order_item), method: :delete %>
                         </div>
-                        <div class= "container-fluid">
-                          <div class= d-flex>
-                            <div class="minicard">
-                              <%= link_to  "+", order_suma_path(order_item, sel:1), class: "boton_carrito" %>
+                          <div class= "container-fluid">
+                            <div class= d-flex>
+                              <div class="minicard">
+                                <%= link_to  "+", order_suma_path(order_item, sel:1), class: "boton_carrito" %>
+                              </div>
+                              <div class= "minicard_cant ">
+                                <%= order_items.cantidad %>
+                              </div>
+                              <div class= "minicard_cant ">
+                                <%= link_to  "-", order_suma_path(order_item, sel:2), class: "boton_carrito" %>
+                              </div>
                             </div>
-                            <div class= "minicard_cant ">
-                              <%= order_items.cantidad %>
-                            </div>
-                            <div class= "minicard_cant ">
-                              <%= link_to  "-", order_suma_path(order_item, sel:2), class: "boton_carrito" %>
-                            </div>
-                          </div>
                         </div>
                         <div>
                           <h3 class="carrito_price"><%=" $ #{order.monto}"%></h3>
