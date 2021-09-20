@@ -3,9 +3,11 @@
     <h3 class="pb-4"><strong>Tienda Virtual</strong></h3>
   </div>
   <div class="container d-flex">
+
   <div class="row">
     <% @wears.each do |w| %>
         <div class="col-2 col-md-2", style="padding-block: 10px;">
+
         <div class="card-body">
           <% if w.photo.attached? %>
             <%= link_to cl_image_tag(w.photo.key ), wear_path(w) %>
@@ -25,4 +27,5 @@
     </div> 
  
   
+
 </div>
