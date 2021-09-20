@@ -11,7 +11,7 @@
                   <% if(order_item.wear.photo.attached?) %>
                     <%= cl_image_tag(order_item.wear.photo.key,class:"carrito_img") %>
                   <% else %>
-                    <%= link_to image_tag("PNG.png", class:"carrito_ing") %>
+                    <%= image_tag("PNG.png", class: "carrito_img") %>
                   <% end %>
                   <div class="card-product-infos ">
                     <div class = row>
