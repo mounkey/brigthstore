@@ -1,5 +1,5 @@
 class WearsController < ApplicationController
-  before_action :authenticate_user!, only:[:new, :create, :update, :edit, :destroy, :search]
+  before_action :authenticate_user!, only:[:new, :create, :update, :edit, :destroy]
   before_action :set_wear, only: [:destroy, :show, :update, :edit]
 
   def index
