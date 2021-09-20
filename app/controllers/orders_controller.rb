@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
- before_action :set_order, only: [:destroy, :show, :update, :edit]
-  
+  before_action :set_order, only: [:destroy, :show, :update, :edit]
+
   def index
     @orders = Order.all
   end
@@ -42,7 +42,7 @@ class OrdersController < ApplicationController
 
   def set_order
     @order = Order.find(params[:id])
-  end 
+  end
 
   def order_params
     params.require(:order).permit(:monto, :fecha, :order_detail, :order_detail_id)

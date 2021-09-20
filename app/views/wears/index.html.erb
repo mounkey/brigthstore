@@ -1,17 +1,26 @@
-<div class="container">
-  <h1>Tienda Virtual</h1>
-  <% @wears.each do |w| %>
-  <div class="card" style="width: 18rem;">
-    <% if w.photo.attached? %>
-      <%= link_to cl_image_tag(w.photo.key ), wear_path(w) %>
-      <% else %>
-      <%= link_to image_tag("PNG.png"), wear_path(w) %>
+<br>
+  <div class="container">
+    <h3 class="pb-4"><strong>Tienda Virtual</strong></h3>
+  </div>
+  <div class="container d-flex">
+    <div class="row">
+    <% @wears.each do |w| %>    
+      <div class="col-2 col-md-3">
+        <div class="card-body">
+          <% if w.photo.attached? %>
+            <%= link_to cl_image_tag(w.photo.key ), wear_path(w) %>
+          <% else %>
+            <%= link_to image_tag("PNG.png"), wear_path(w) %>
+          <% end %>
+            <h5 class="card-title"><%= w.marca %></h5>
+            <p class="card-text"><%= truncate(w.descripcion,length:15) %></p>
+            <small class="card-title"><%= w.talla %></small>
+            <div class="card-body-infos">
+              <%= link_to  "Mayor informacion", wear_path(w) %>
+              <a id="price" class="btn botones_price"><%="$ #{w.valor}"%></a>
+            </div>
+        </div>
+      </div>
       <% end %>
-    <div class="card-body">
-      <h5 class="card-title"><%= w.marca %> - <%= w.talla %></h5>
-      <p class="card-text"><%= w.descripcion %></p>
-      <%= link_to  "Mayor informacion", wear_path(w) %>
-    </div>
-    <% end %>
-  </div> 
+    </div>  
 </div>

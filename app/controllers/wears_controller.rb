@@ -49,6 +49,11 @@ class WearsController < ApplicationController
     end
   end
 
+  def search
+    busc = Wear.where(marca: params[:search])
+    redirect_to wears_path
+  end
+
   private
 
   def set_wear
