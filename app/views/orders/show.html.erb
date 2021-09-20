@@ -5,7 +5,7 @@
       <% order_items = OrderItem.find_by(order: order.id) %> 
         <br/>
           <% if(order_items != nil) %>
-            <% order_items.all.each do |order_item| %>
+            <% OrderItem.all.each do |order_item| %>
               <div class="col-12">
                 <div class="card-product_carrito">         
                   <% if(order_item.wear.photo.attached?) %>
@@ -26,19 +26,17 @@
                            <%= link_to image_tag("trash.png"), order_order_item_path(order_item), method: :delete %>
                         </div>
                           <div class= "container-fluid">
-                            <% order_items.all.each do |order_item2| %>
-                              <div class= d-flex>
-                                <div class="minicard">
-                                  <%= link_to  "+", order_suma_path(order_item2, sel:1), class: "boton_carrito" %>
-                                </div>
-                                <div class= "minicard_cant ">
-                                  <%= order_items.cantidad %>
-                                </div>
-                                <div class= "minicard_cant ">
-                                  <%= link_to  "-", order_suma_path(order_item2, sel:2), class: "boton_carrito" %>
-                                </div>
+                            <div class= d-flex>
+                              <div class="minicard">
+                                <%= link_to  "+", order_suma_path(order_item, sel:1), class: "boton_carrito" %>
+                              </div>
+                              <div class= "minicard_cant ">
+                                <%= order_items.cantidad %>
+                              </div>
+                              <div class= "minicard_cant ">
+                                <%= link_to  "-", order_suma_path(order_item, sel:2), class: "boton_carrito" %>
+                              </div>
                             </div>
-                          <% end %>
                         </div>
                         <div>
                           <h3 class="carrito_price"><%=" $ #{order.monto}"%></h3>
