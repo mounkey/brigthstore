@@ -68,7 +68,7 @@ class OrderItemsController < ApplicationController
       # que pasa si se pudó agregar?
       # logicamente, es redireccionar a la pagina de donde se inicio el proceso de sumar
       # es decir, pagina donde clickeaste ese link
-      redirecto_to order_path(current_order), alert: "Sorry, my friend, algo paso mal"
+      redirect_to order_path(current_order), alert: "Sorry, my friend, algo paso mal"
     end
   end
 
@@ -98,6 +98,6 @@ class OrderItemsController < ApplicationController
     @order = current_order
     @order.monto = 0
     @order.monto += price
-    @order.save
+    @order.save!
   end
  end
