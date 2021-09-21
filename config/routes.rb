@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   get "/pages/who", to:"pages#who", as: :pages_who
   get "/pages/help", to:"pages#help", as: :pages_help
 
-  get "wears/search/:search", to:"wears#search", as: :wears_search
+  # get "wears/search/:search", to:"wears#search", as: :wears_search
+  get "search", to:"wears#search", as: :search
   
   
   
