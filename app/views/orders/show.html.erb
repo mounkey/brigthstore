@@ -39,7 +39,7 @@
                             </div>
                         </div>
                         <div>
-                          <h3 class="carrito_price"><%=" $ #{order.monto}"%></h3>
+                          <h3 class="carrito_price"><%=" $ #{order_item.total_price}"%></h3>
                         </div>
                       </div>
                     </div>
@@ -49,7 +49,7 @@
             <% end %>
       <% end %>
         <div class= "row text_right">
-          <% resul = Order.where(id: order).sum(:monto) %>
+          <% resul = OrderItem.where(order_id: order).sum(:total_price) %>
           <h2 class = "carrito_price"> <%= "Total : $ #{resul} "%>
         </div>
     
