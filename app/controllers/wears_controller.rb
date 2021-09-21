@@ -53,7 +53,7 @@ class WearsController < ApplicationController
     # busc = Wear.where(marca: params[:search])
     # redirect_to wears_path
     @wears = Wear.where("descripcion LIKE ?", "%" + params[:search] + "%")
-    redirect_to wears_search_path
+    redirect_to search_path
   end
 
   private

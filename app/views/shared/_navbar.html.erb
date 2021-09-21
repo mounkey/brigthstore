@@ -7,7 +7,7 @@
       <div class="col-6 col-md-6 col-lg-5 col-xl-5 text-center">
         <div class ="container-fluid">
           <div class="d-flex">
-            <%= simple_form_for :wears_search, method: :get, :html => {class: 'form'} do |f| %>
+            <%= simple_form_for :search, method: :get, :html => {class: 'form'} do |f| %>
               <!-- <%= f.input :marca , placeholder: "Buscar" %> -->
               <%= f.input :search , placeholder: "Buscar", label: false %>
               <%= f.submit "Buscar", class: "btn botones" %>
