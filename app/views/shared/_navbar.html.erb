@@ -4,25 +4,14 @@
       <div class = "col-12 col-md-3 col-lg-3 col-xl-3 text-start">
         <%= link_to image_tag("PNG.png"), root_path, class:"img_logo"%>
       </div>
-<<<<<<< HEAD
-      <div class="col-6 col-md-6 col-lg-5 col-xl-5 text-center">
-        <div class ="container-fluid">
-          <div class="d-flex">
-            <%= simple_form_for :search, method: :get, :html => {class: 'form'} do |f| %>
-              <!-- <%= f.input :marca , placeholder: "Buscar" %> -->
-              <%= f.input :search , placeholder: "Buscar", label: false %>
-              <%= f.submit "Buscar", class: "btn botones" %>
-            <% end %>
-=======
       <div class="col-6 col-md-5 col-lg-5 col-xl-5 text-center">
         <div class= "row">
           <div class= "col-10">
             <%= simple_form_for :wears_search, method: :get, :html => {class: 'form'} do |f| %>
-              <%= f.input :marca , placeholder: "Buscar", label: false %>
+              <%= f.input :search , placeholder: "Buscar", label: false %>
           </div>
           <div class = "col-2">
             <%= f.submit "Buscar", class: "btn botones" %>
->>>>>>> master
           </div>
           <%end%>
         </div>
