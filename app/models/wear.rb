@@ -7,4 +7,5 @@ class Wear < ApplicationRecord
   validates :marca, presence: true
   validates :valor, presence: true
   validates :descripcion, presence: true
+
 end

@@ -1,7 +1,7 @@
 class WearsController < ApplicationController
-  before_action :authenticate_user!, only:[:new, :create, :update, :edit, :destroy, :search]
+  before_action :authenticate_user!, only:[:new, :create, :update, :edit, :destroy]
   before_action :set_wear, only: [:destroy, :show, :update, :edit]
-
+  
   def index
     @wears = Wear.all
     #wears = policy_scope(wear).order(created_at: :desc)
@@ -20,7 +20,7 @@ class WearsController < ApplicationController
     @wear = Wear.new(wear_params)
     authorize @wear
     @wear.user_id = current_user.id
-    if @wear.save 
+    if @wear.save
       redirect_to wears_path
     else
       render :new
@@ -50,8 +50,12 @@ class WearsController < ApplicationController
   end
 
   def search
-    @wears = Wear.where("descripcion LIKE ?", "%" + params[:search] + "%")
-    redirect_to search_path
+    @search = params["search"]
+    if @search.present?
+      @name = @search["name"]
+      @wear = Wear.where(marca: @name)
+      redirect_to search_path
+    end
   end
 
   private
