@@ -6,15 +6,11 @@
       </div>
       <div class="col-6 col-md-5 col-lg-5 col-xl-5 text-center">
         <div class= "row">
-          <div class= "col-10">
-            <%= simple_form_for :search, url: search_path, method: "GET", html: { class: 'form' } do |f| %>
-              <%= f.input :name , placeholder: "Buscar", label: false, input_html: {value: ""} %>
-          </div>
-          <div class = "col-2">
-            <%= f.submit "Buscar", class: "btn botones" %>
-          </div>
-          <%end%>
-        </div>
+          <%= form_tag(search_path, method: :get, class: "form-inline navbar-search") do %>
+            <%= search_field_tag :keyword, params[:keyword], placeholder: "¿Qué deseas arrendar?", class: "form-control" %>
+            <button class="nav-mgngls" type="submit"><i class="fas fa-search"></i></button>
+          <% end %>
+        </div>    
       </div>
       <div class = "col-6 col-md-4 col-lg-4 col-xl-4">
         <% if user_signed_in? %>
