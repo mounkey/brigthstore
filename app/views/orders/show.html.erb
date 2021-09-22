@@ -2,12 +2,12 @@
  <div class="container">
   <div class= "row">
     <% Order.all.each do |order| %>
-      <% order_items = OrderItem.find_by(order: order.id) %> 
+      <% order_items = OrderItem.find_by(order: order.id) %>
         <br/>
           <% if(order_items != nil) %>
-            <% OrderItem.all.each do |order_item| %>
+            <% OrderItem.order(:price).all.each do |order_item| %>
               <div class="col-12">
-                <div class="card-product_carrito">         
+                <div class="card-product_carrito">
                   <% if(order_item.wear.photo.attached?) %>
                     <%= cl_image_tag(order_item.wear.photo.key,class:"carrito_img") %>
                   <% else %>
@@ -52,7 +52,7 @@
           <% resul = OrderItem.where(order_id: order).sum(:total_price) %>
           <h2 class = "carrito_price"> <%= "Total : $ #{resul} "%>
         </div>
-    
+
     <% end %>
   </div>
  </div>
