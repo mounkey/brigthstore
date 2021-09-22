@@ -1,5 +1,5 @@
 class OrderItemsController < ApplicationController
-  before_action :set_order_item, only: [:destroy, :edit, :update, :suma, :resta]
+  before_action :set_order_item, only: [:destroy, :edit, :update, :suma, :totalprice_wear]
   before_action :authorized_user?, only: [:create, :update, :destroy]
   skip_after_action :verify_authorized
 
@@ -40,7 +40,7 @@ class OrderItemsController < ApplicationController
     end
   end
 
-  
+
   def suma
     case params[:sel]
     when '1'
@@ -72,11 +72,9 @@ class OrderItemsController < ApplicationController
     end
   end
 
-  
   def totalprice_wear
     price = @order_item.price * @order_item.cantidad
     @order_item.total_price = price
     @order_item.save
   end
-  
- end
+
