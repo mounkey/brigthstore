@@ -19,4 +19,8 @@ class WearPolicy < ApplicationPolicy
     true
   end
 
+  def search?
+    true
+  end
+
 end
