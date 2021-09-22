@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     get "/order_id/:id", to: "order_items#suma", as: :suma
   end
 
-  resources :order_deatils, only: %i[new create update destroy]
+  resources :order_details, only: %i[new create update destroy]
 
   devise_for :users
 
