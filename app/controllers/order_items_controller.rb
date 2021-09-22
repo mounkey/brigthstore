@@ -53,7 +53,7 @@ class OrderItemsController < ApplicationController
       redirect_to order_path(current_order), notice: "Bingo! Agregaste un item mas!"
     else
       redirect_to order_path(current_order), alert: "Sorry, my friend, algo paso mal"
-    end    
+    end
   end
 
   private
@@ -77,4 +77,4 @@ class OrderItemsController < ApplicationController
     @order_item.total_price = price
     @order_item.save
   end
-
+end
