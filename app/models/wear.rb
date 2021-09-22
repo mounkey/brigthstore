@@ -7,4 +7,6 @@ class Wear < ApplicationRecord
   validates :marca, presence: true
   validates :valor, presence: true
   validates :descripcion, presence: true
+
+  scope :search_results, ->(parameter) { where("lower(descripcion) LIKE ?", "%#{parameter}%") }
 end

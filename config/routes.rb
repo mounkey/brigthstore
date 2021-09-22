@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   
   resources :categories 
 
-  resources :wears
+  resources :wears 
+  get "/search", to:"wears#search"
 
   resources :orders do
     resources :order_items, only: %i[new create update destroy]
@@ -18,7 +19,7 @@ Rails.application.routes.draw do
   get "/pages/who", to:"pages#who", as: :pages_who
   get "/pages/help", to:"pages#help", as: :pages_help
 
-  get "wears/search/:search", to:"wears#search", as: :wears_search
+  # get "wears/search/:search", to:"wears#search", as: :wears_search 
   
   
   

@@ -4,31 +4,29 @@
       <div class = "col-12 col-md-3 col-lg-3 col-xl-3 text-start">
         <%= link_to image_tag("PNG.png"), root_path, class:"img_logo"%>
       </div>
-      <div class="col-6 col-md-5 col-lg-5 col-xl-5 text-center">
+      <div class="col-12 col-md-6 col-lg-6 col-xl-6 text-center">
         <div class= "row">
-          <div class= "col-10">
-            <%= simple_form_for :wears_search, method: :get, :html => {class: 'form'} do |f| %>
-              <%= f.input :marca , placeholder: "Buscar", label: false %>
-          </div>
-          <div class = "col-2">
-            <%= f.submit "Buscar", class: "btn botones" %>
-          </div>
-          <%end%>
-        </div>
+          <%= form_tag(search_path, method: :get, class: "form-inline navbar-search") do %>
+            <%= search_field_tag :keyword, params[:keyword], placeholder: "¿Qué deseas arrendar?", class: "form-control" %>
+            <button class="nav-mgngls" type="submit"><i class="fas fa-search"></i></button>
+          <% end %>
+        </div>    
       </div>
-      <div class = "col-6 col-md-4 col-lg-4 col-xl-4">
+      <div class = "col-12 col-md-3 col-lg-3 col-xl-3">
         <% if user_signed_in? %>
           <div class="container-fluid">
             <div class= "d-flex">
-              
+              <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
               <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn botones" %> <br/>
               <% current_user.orders.each do |o| %>
-              <%= link_to "Carro", order_path(o.id), class: "btn botones" %>
+                <%= link_to order_path(o.id) do %>
+                  &nbsp;<i class="fas fa-shopping-cart fa-2x"></i>
+                <% end %>
               <% end %>
             </div>
           </div>
           <% else %>
-          <%= link_to  "Ingresar", user_session_path, class: "btn botones"%>
+          &nbsp;<%= link_to  "Ingresar", user_session_path, class: "btn botones"%>
         <% end %>
       </div>
     </div>

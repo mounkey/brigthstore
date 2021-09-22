@@ -31,7 +31,7 @@
                                 <%= link_to  "+", order_suma_path(order_item, sel:1), class: "boton_carrito" %>
                               </div>
                               <div class= "minicard_cant ">
-                                <%= order_items.cantidad %>
+                                <%= order_item.cantidad %>
                               </div>
                               <div class= "minicard_cant ">
                                 <%= link_to  "-", order_suma_path(order_item, sel:2), class: "boton_carrito" %>
@@ -39,7 +39,7 @@
                             </div>
                         </div>
                         <div>
-                          <h3 class="carrito_price"><%=" $ #{order.monto}"%></h3>
+                          <h3 class="carrito_price"><%=" $ #{order_item.total_price}"%></h3>
                         </div>
                       </div>
                     </div>
@@ -49,11 +49,10 @@
             <% end %>
       <% end %>
         <div class= "row text_right">
-          <% resul = Order.where(id: order).sum(:monto) %>
+          <% resul = OrderItem.where(order_id: order).sum(:total_price) %>
           <h2 class = "carrito_price"> <%= "Total : $ #{resul} "%>
         </div>
     
     <% end %>
   </div>
  </div>
-

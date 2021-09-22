@@ -1,19 +1,10 @@
 class PagesController < ApplicationController
   def home
-    if (user_signed_in?)
-      @currentUser = current_user.id
+    @search = params["search"]
+    if @search.present?
+      @name = @search["name"]
+      @wear = Wear.where(marca: @name)
+      redirect_to search_path
     end
-  end
-
-  def who
-
-  end
-
-  def contact
-    
-  end
-
-  def help
-    
   end
 end

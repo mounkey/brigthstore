@@ -25,3 +25,4 @@
 #Category.create(nombre: "Ropa_Winter", photo: "picturesWintersmall.png")
 #Category.create(nombre: "Ofertas", photo: "picturesSalesmall.png")
 #Category.create(nombre: "Party", photo:"picturesPartysmall.png")
+

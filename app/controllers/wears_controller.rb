@@ -1,7 +1,7 @@
 class WearsController < ApplicationController
   before_action :authenticate_user!, only:[:new, :create, :update, :edit, :destroy]
   before_action :set_wear, only: [:destroy, :show, :update, :edit]
-
+  skip_before_action :authenticate_user!, only: %i[show search]
   def index
     @wears = Wear.all
     #wears = policy_scope(wear).order(created_at: :desc)
@@ -20,7 +20,7 @@ class WearsController < ApplicationController
     @wear = Wear.new(wear_params)
     authorize @wear
     @wear.user_id = current_user.id
-    if @wear.save 
+    if @wear.save
       redirect_to wears_path
     else
       render :new
@@ -50,17 +50,18 @@ class WearsController < ApplicationController
   end
 
   def search
-    busc = Wear.where(marca: params[:search])
-    redirect_to wears_path
+    @keyword = params[:keyword].downcase
+    @results = Wear.search_results(@keyword)
   end
 
   private
+
+  def wear_params
+    params.require(:wear).permit(:category_id, :talla, :color, :descripcion, :marca, :valor, :user_id, :photo)
+  end
 
   def set_wear
     @wear = Wear.find(params[:id])
   end 
 
-  def wear_params
-    params.require(:wear).permit(:category_id, :talla, :color, :descripcion, :marca, :valor, :user_id, :photo)
-  end
 end
