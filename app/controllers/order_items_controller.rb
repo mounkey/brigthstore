@@ -40,6 +40,7 @@ class OrderItemsController < ApplicationController
     end
   end
 
+
   def suma
     case params[:sel]
     when '1'
@@ -52,14 +53,9 @@ class OrderItemsController < ApplicationController
       redirect_to order_path(current_order), notice: "Bingo! Agregaste un item mas!"
     else
       redirect_to order_path(current_order), alert: "Sorry, my friend, algo paso mal"
-    end
+    end    
   end
 
-
-  # Aca pasa lo mismo
-  # Este metodo necesita el mismo refactoring
-  # Si llegas a tener tiempo y ganas, pensá como podes utilizar 1 metodo en vez de dos diferentes
-  
   private
 
   def set_order_item
@@ -81,5 +77,4 @@ class OrderItemsController < ApplicationController
     @order_item.total_price = price
     @order_item.save
   end
- 
- end
+

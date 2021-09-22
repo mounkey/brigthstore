@@ -7,8 +7,8 @@
       <div class="col-12 col-md-6 col-lg-6 col-xl-6 text-center">
         <div class= "row">
           <div class= "col-10">
-            <%= simple_form_for :wears_search, method: :get, :html => {class: 'form'} do |f| %>
-              <%= f.input :search , placeholder: "Buscar", label: false %>
+            <%= simple_form_for :search, url: search_path, method: "GET", html: { class: 'form' } do |f| %>
+              <%= f.input :name , placeholder: "Buscar", label: false, input_html: {value: ""} %>
           </div>
           <div class = "col-2">
             <%= f.submit "Buscar", class: "btn botones" %>
