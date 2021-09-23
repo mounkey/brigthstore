@@ -47,14 +47,15 @@
               </div>
             <% end %>
       <% end %>
- </div>
-   <div class= "row ">
+    <% end %> 
+  </div>
+ 
+  <div class= "row ">
     <div class = "col-12 - col-md-12 text-right">
-      <% resul = OrderItem.where(order_id: order).sum(:total_price) %>
-      <h2 class = "carrito_price"> <%= "Total : $ #{resul} "%>
-    </div>
+      <h2 class = "carrito_price"> <%= "Total : $ #{@order_total} "%>    
+    </div>        
   </div> 
-  <% end %>
+  
   <div class= "row ">
     <div class = "col-12 - col-md-12 text-right">
       <%= link_to  "Seguir comprando", wears_path, class: "btn botones" %>

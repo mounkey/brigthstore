@@ -7,4 +7,9 @@ class PagesController < ApplicationController
       redirect_to search_path
     end
   end
+
+  def admin
+    @user = current_user.admin
+    raise
+  end
 end

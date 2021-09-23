@@ -6,7 +6,9 @@ class OrdersController < ApplicationController
   end
 
   # confirmacion
-  def show; end
+  def show
+    @order_total = @order.order_items.where(order_id: @order).sum(:total_price)
+  end
 
   def new
     @order = current_order
