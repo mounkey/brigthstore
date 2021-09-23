@@ -1,4 +1,4 @@
-.head_menu {
+.navbar_head_menu {
   height:auto;
   background-color: #A3DDCB;
   color: white;
@@ -9,20 +9,23 @@
   padding-bottom: 20px;
 }
 
-.img_logo {
+.navbar_img_logo {
   width: 120px;
   height: 40px;
 }
 
-.head_menu a {
+.navbar_head_menu a {
   text-decoration: none;
   color:white;
+  display:inline-block;
 }
 
-.head_menu a:hover {
+.navbar_head_menu a:hover {
   color: #E5707E;
 }
 
-.menu{
+.navbar_menu{
   margin-left: -30px;
+  max-width: auto;
+  display: inline-block;
 }
