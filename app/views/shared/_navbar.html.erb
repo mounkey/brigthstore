@@ -1,8 +1,8 @@
-<div class="head_menu">
+<div class="navbar_head_menu">
   <div class ="container">
     <div class="row">
       <div class="col-12 col-md-3 col-lg-3 col-xl-3 text-start">
-        <%= link_to image_tag("PNG.png"), root_path, class:"img_logo"%>
+        <%= link_to image_tag("PNG.png"), root_path, class:"navbar_img_logo"%>
       </div>
       <div class="col-12 col-md-6 col-lg-6 col-xl-6 text-center">
         <div class="row">
@@ -20,7 +20,7 @@
               <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn botones" %><br/>
               <% current_user.orders.each do |o| %>
                 <%= link_to order_path(o.id) do %>
-                  &nbsp;<i class="fas fa-shopping-cart fa-2x"></i>
+                  &nbsp;<i class="fas fa-shopping-cart fa-1x p-2"></i>
                 <% end %>
               <% end %>
             </div>
@@ -30,26 +30,26 @@
         <% end %>
       </div>
     </div>
-   <div class= "container ">
-      <div class = "col-12 col-md-12">
+   <div class= "container">
+      <div class = "col-10 col-md-10">
         <div class= "row">
           <div class= "col-2 col-md-2 col-lg-2 col-xl-2">
-            <%= link_to  "Inicio", root_path, class:"menu"%>
+            <%= link_to  "Inicio", root_path, class:"navbar_menu"%>
           </div>
           <div class= "col-2 col-md-2 col-lg-2 col-xl-2">
-            <%= link_to  "Compra", wears_path, class:"menu"%>
+            <%= link_to  "Compra", wears_path, class:"navbar_menu"%>
           </div>
           <div class= "col-2 col-md-2 col-lg-2 col-xl-2">
-            <%= link_to  "Nosotros", pages_who_path, class:"menu"%>  
+            <%= link_to  "Nosotros", pages_who_path, class:"navbar_menu"%>
           </div>
           <div class= "col-2 col-md-2   col-lg-2 col-xl-2">
-            <%= link_to  "Contacto", pages_contact_path, class:"menu"%>  
+            <%= link_to  "Contacto", pages_contact_path, class:"navbar_menu"%> 
           </div>
           <div class= "col-2 col-md-2   col-lg-2 col-xl-2">
-            <%= link_to  "Categorias", categories_url, class:"menu"%>
+            <%= link_to  "Categorias", categories_url, class:"navbar_menu"%>
           </div>
           <div class= "col-2 col-md-2   col-lg-2 col-xl-2 text-left">
-            <%= link_to  "ayuda", pages_help_path,class: "menu" %>
+            <%= link_to  "ayuda", pages_help_path,class: "navbar_menu" %>
           </div>
         </div>
       </div>
