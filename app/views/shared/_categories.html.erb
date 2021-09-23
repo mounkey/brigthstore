@@ -2,11 +2,25 @@
   <h3 class="pb-4"><strong>Categorias</strong></h3>
     <div class="row">
         <% Category.all.each do |c|%>
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-md-6 picture_big">
             <%= link_to category_path(c.id) do %>
               <%= image_tag(c.imagen, class: "picture_big img-fluid") %>
             <% end %>
           </div>
         <% end %>
+        </div>
     </div>
 </div>
+
+<div class="container">
+    <div class="row">
+        <% Category.all.each do |c|%>
+          <div class="col-3 col-md-3 picture_small">
+            <%= link_to category_path(c.id) do %>
+              <%= image_tag(c.imagen, class: "picture_small img-fluid") %>
+            <% end %>
+          </div>
+        <% end %>
+          </div>
+    </div>
+<div>
