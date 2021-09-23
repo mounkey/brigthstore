@@ -1,13 +1,11 @@
 <br>
-  <div class="container">
-    <h3 class="pb-4"><strong>Tienda Virtual</strong></h3>
-  </div>
-  <div class="container d-flex">
-
+<div class="container">
+  <h3 class="pb-4"><strong>Tienda Virtual</strong></h3>
+</div>
+<div class="container">
   <div class="row">
     <% @wears.each do |w| %>
-        <div class="col-2 col-md-2", style="padding-block: 10px;">
-
+      <div class="col-2 col-md-2", style="padding-block: 10px;">
         <div class="card-body">
           <% if w.photo.attached? %>
             <%= link_to cl_image_tag(w.photo.key ), wear_path(w) %>
@@ -18,14 +16,11 @@
             <p class="card-text"><%= truncate(w.descripcion,length:15) %></p>
             <small class="card-title"><%= w.talla %></small>
             <div class="card-body-infos">
-              <%= link_to  "Mayor informacion", wear_path(w) %>
+              <%= link_to "Mayor informacion", wear_path(w) %>
               <a id="price" class="btn botones_price"><%="$ #{w.valor}"%></a>
             </div>
         </div>
       </div>
-       <% end %>
-    </div> 
- 
-  
-
+    <% end %>
+  </div> 
 </div>
