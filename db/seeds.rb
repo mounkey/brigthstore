@@ -4,8 +4,9 @@ Wear.destroy_all
 
 User.create(email: "lfuentes.entergrafic@gmail.com", password: "15051996", admin: true)
 User.create(email:"jpgrover@mounkey.cl", password: "12345678", admin: true)
-User.create(email: "entergr4fic@gmail.com", password: "12345678" admin: false)
-User.create(email: "megalatinvoz@gmail.com", password: "12345678" admin: false)
+User.create(email: "entergr4fic@gmail.com", password: "12345678", admin: false)
+User.create(email: "megalatinvoz@gmail.com", password: "12345678", admin: false)
+
 
 
 Category.create(nombre: "Ropa_Mujer", imagen: "picturesWomanbig.png")
