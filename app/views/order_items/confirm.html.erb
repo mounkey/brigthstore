@@ -25,21 +25,7 @@
                         <div>
                            <%= link_to image_tag("trash.png"), order_order_item_path(order_item), method: :delete %>
                         </div>
-                          <div class= "container-fluid">
-                            <div class= d-flex>
-                              <div class="minicard">
-                                <%= link_to  "+", order_suma_path(order_item, sel:1), class: "boton_carrito" %>
-                              </div>
-                              <div class= "minicard_cant ">
-                                <%= order_item.cantidad %>
-                              </div>
-                              <div class= "minicard_cant ">
-                                <%= link_to  "-", order_suma_path(order_item, sel:2), class: "boton_carrito" %>
-                              </div>
-                            </div>
-                        </div>
-                        <div>
-                          <h3 class="carrito_price"><%=" $ #{order.monto}"%></h3>
+                        <h3 class="carrito_price"><%=" $ #{order.monto}"%></h3>
                         </div>
                       </div>
                     </div>
@@ -59,10 +45,8 @@
   <div class= "row ">
     <div class = "col-12 - col-md-12 text-right">
       <%= link_to  "Seguir comprando", wears_path, class: "btn botones" %>
-      <%= link_to  "Pagar", new_user_session_path, class: "btn botones" %>
+      <%= link_to  "Pagar", pages_confirm_path, class: "btn botones" %>
     </div>
   </div>
 
  </div>
-
-

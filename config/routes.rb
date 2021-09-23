@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :orders do
     resources :order_items, only: %i[new create update destroy]
     get "/order_id/:id", to: "order_items#suma", as: :suma
+    get "/confirm", to:"order_items#confirm", as: :confirm
   end
 
   resources :order_details, only: %i[new create update destroy]
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
   get "/pages/who", to:"pages#who", as: :pages_who
   get "/pages/help", to:"pages#help", as: :pages_help
 
+  
   # get "wears/search/:search", to:"wears#search", as: :wears_search 
   
   
