@@ -13,14 +13,5 @@
 </div>
 
 <div class="container">
-    <div class="row">
-        <% Category.all.each do |c|%>
-          <div class="col-3 col-md-3 picture_small">
-            <%= link_to category_path(c.id) do %>
-              <%= image_tag(c.imagen, class: "picture_small img-fluid") %>
-            <% end %>
-          </div>
-        <% end %>
-          </div>
-    </div>
+
 <div>
