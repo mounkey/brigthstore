@@ -13,9 +13,21 @@
         <% end %>
       </div>
       <div class="rounded float-start mt-4" style="width: 340px; height: 100px;" >
-        <%= cl_image_tag(@wear.photo.key, width: 100, height:100 ) %>
-        <%= cl_image_tag(@wear.photo.key, width: 100, height:100 ) %>
-        <%= cl_image_tag(@wear.photo.key, width: 100, height:100 ) %>
+        <% if @wear.photo.attached? %>
+          <%= cl_image_tag(@wear.photo.key, width: 100, height:100 ) %>
+        <% else %>
+          <%= image_tag ("PNG.png"), width:120, height:40 %>
+        <% end %>
+         <% if @wear.photo.attached? %>
+          <%= cl_image_tag(@wear.photo.key, width: 100, height:100 ) %>
+        <% else %>
+          <%= image_tag ("PNG.png"), width:120, height:40 %>
+        <% end %>
+         <% if @wear.photo.attached? %>
+          <%= cl_image_tag(@wear.photo.key, width: 100, height:100 ) %>
+        <% else %>
+          <%= image_tag ("PNG.png"), width:120, height:40 %>
+        <% end %>
       </div>
     </div>
 
@@ -39,6 +51,7 @@
               <%= f.hidden_field :wear_id, value: @wear.id %>
               <%= f.hidden_field :price, value: @wear.valor %>
               <%= f.hidden_field :cantidad, value: "1" %>
+              <%= f.hidden_field :total_price, value: @wear.valor %>
               <%= f.submit "Comprar", class: "btn btn-sm botones" %>
             <% end -%>
           <% else %>

@@ -56,6 +56,12 @@ class OrderItemsController < ApplicationController
     end
   end
 
+  def confirm
+    @order = Order.all
+    @order_item = OrderItem.all
+  end
+
+  
   private
 
   def set_order_item
