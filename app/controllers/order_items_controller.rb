@@ -59,6 +59,7 @@ class OrderItemsController < ApplicationController
   def confirm
     @order = Order.all
     @order_item = OrderItem.all
+    @order_total  = @order_item.where(order_id: @order).sum(:total_price)
   end
 
   
