@@ -1,5 +1,5 @@
 class WearsController < ApplicationController
-  before_action :authenticate_user!, only:[:new, :create, :update, :edit, :destroy]
+  before_action :authenticate_user!, only:[:new, :create, :update, :edit, :destroy, :show]
   before_action :set_wear, only: [:destroy, :show, :update, :edit]
   skip_before_action :authenticate_user!, only: %i[show search]
   def index
@@ -8,6 +8,11 @@ class WearsController < ApplicationController
   end
 
   def show
+    if @wear.user_id == current_user.id
+      @wear_q = 1
+    else
+      @wear_q = 0
+    end
   end
 
   def new
