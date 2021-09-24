@@ -22,19 +22,19 @@
                         <small class="carrito_price"> <%= order_item.wear.valor %></small>
                       </div>
                       <div class="col-6">
-                        <div>
+                        <div class="w-40">
                            <%= link_to image_tag("trash.png"), order_order_item_path(order_item), method: :delete %>
                         </div>
                           <div class= "container-fluid">
                             <div class= d-flex>
                               <div class="minicard">
-                                <%= link_to  "+", order_suma_path(order_item, sel:1), class: "boton_carrito" %>
+                                <%= link_to  "+", order_suma_path(order_item, sel:1), class: "botones_carrito" %>
                               </div>
                               <div class= "minicard_cant ">
                                 <%= order_item.cantidad %>
                               </div>
                               <div class= "minicard_cant ">
-                                <%= link_to  "-", order_suma_path(order_item, sel:2), class: "boton_carrito" %>
+                                <%= link_to  "-", order_suma_path(order_item, sel:2), class: "botones_carrito" %>
                               </div>
                             </div>
                         </div>
@@ -50,18 +50,20 @@
       <% end %>
     <% end %> 
   </div>
- 
+ <div class="container pt-4 ">
   <div class= "row ">
     <div class = "col-12 - col-md-12 text-right">
       <h2 class = "carrito_price"> <%= "Total : $ #{@order_total} "%>    
     </div>        
   </div> 
+
   
   <div class= "row ">
     <div class = "col-12 - col-md-12 text-right">
       <%= link_to  "Seguir comprando", wears_path, class: "btn botones" %>
       <%= link_to  "Pagar", order_confirm_path(Order), class: "btn botones" %>
     </div>
+  </div>
   </div>
 
  </div>

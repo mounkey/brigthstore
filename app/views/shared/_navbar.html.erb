@@ -6,7 +6,7 @@
       </div>
       <div class="col-12 col-md-6 col-lg-6 col-xl-6 text-center">
         <div class="row">
-          <%= form_tag(search_path, method: :get, class: "form-inline form") do %>
+          <%= form_tag(search_path, method: :get, class: "form-inline form w-100") do %>
             <%= search_field_tag :keyword, params[:keyword], placeholder: "¿Que buscas?", class: "form-control" %>
             <button class="btn botones" type="submit" style="width: 40px; height: 40px;"><i class="fas fa-search"></i></button>
           <% end %>

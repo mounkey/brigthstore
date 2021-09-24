@@ -21,11 +21,15 @@
 }
 
 .navbar_head_menu a:hover {
-  color: #E5707E;
+  color: black;
 }
 
 .navbar_menu{
   margin-left: -30px;
   max-width: auto;
   display: inline-block;
+}
+
+form.form-inline.form.w-100 input {
+  width: calc(100% - 40px);
 }
