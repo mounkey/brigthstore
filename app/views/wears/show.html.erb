@@ -64,6 +64,7 @@
         <% if user_signed_in? %>
           <% if @wear_q == 1 %>
             <%= link_to "Modificar", edit_wear_path(@wear), class: "btn botones" %>
+            <%= link_to "Borrar", wear_path(@wear), class: "btn botones", method: :delete,  data: { confirm: "Are you sure?" }  %>
           <% end %>
         <% end %>        
       </p>
