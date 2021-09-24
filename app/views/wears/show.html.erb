@@ -63,10 +63,10 @@
       <p> 
         <% if user_signed_in? %>
           <% if @wear_q == 1 %>
-            <%= link_to  "Modificar", edit_wear_path(@wear), class: "btn botones" %>
-            <%= link_to  "Borrar", root_path, method: "delete", data: {confirm: "¿Estas seguro?"}, class: "btn botones"%>
+            <%= link_to "Modificar", edit_wear_path(@wear), class: "btn botones" %>
           <% end %>
         <% end %>        
+        <% raise %>
 
       </p>
             
