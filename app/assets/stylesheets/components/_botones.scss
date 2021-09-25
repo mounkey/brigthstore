@@ -31,13 +31,23 @@
   height: 30px;
 }
 
-.botones_carrito{
+.botones-carrito {
   background-color: #A3DDCB;
   color: white;
   font-size: 22px;
-  font-family: Montserrat;
-  width: 40px;
-  height: 40px;
-  border-radius: 5px;
-  
+  font-family: open sans-serif;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+}
+
+.botones-carrito2 {
+  background-color: white;
+  color: grey;
+  font-size: 22px;
+  font-family: open sans-serif;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  border-color: #A3DDCB;
 }
