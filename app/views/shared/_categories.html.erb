@@ -1,12 +1,47 @@
-<div class="container">
-  <h3 class="pb-4"><strong>Categorias</strong></h3>
-    <div class="row">
-        <% Category.all.each do |c|%>
-          <div class="col-12 col-md-6">
-            <%= link_to category_path(c.id) do %>
-              <%= image_tag(c.imagen, class: "picture_big img-fluid") %>
-            <% end %>
+<div class = "container">
+ <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="row">
+          <div class="col-12 col-md-12 picture_big">
+            <%= link_to category_path(@ids[0]) do %>
+              <%= image_tag(@pics[0], class: "picture_big img-fluid") %>
+            <% end %>         
           </div>
-        <% end %>
+        </div>
+        <div class="row">
+          <div class="col-6 col-md-6 picture_small">
+            <%= link_to category_path(@ids[1]) do %>
+              <%= image_tag(@pics[1], class: "picture_small img-fluid") %>
+            <% end %>         
+          </div>
+          <div class="col-6 col-md-6 picture_small">
+            <%= link_to category_path(@ids[2]) do %>
+              <%= image_tag(@pics[2], class: "picture_small img-fluid") %>
+            <% end %>         
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="row">
+          <div class="col-12 col-md-12 picture_big">
+            <%= link_to category_path(@ids[3]) do %>
+              <%= image_tag(@pics[3], class: "picture_big img-fluid") %>
+            <% end %>         
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-6 col-md-6 picture_small">
+            <%= link_to category_path(@ids[4]) do %>
+              <%= image_tag(@pics[4], class: "picture_small img-fluid") %>
+            <% end %>         
+          </div>
+          <div class="col-6 col-md-6 picture_small">
+            <%= link_to category_path(@ids[5]) do %>
+              <%= image_tag(@pics[5], class: "picture_small img-fluid") %>
+            <% end %>         
+          </div>
+        </div>
+      </div>
     </div>
 </div>
+<br/>

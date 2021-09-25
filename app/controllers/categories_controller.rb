@@ -49,6 +49,8 @@ class CategoriesController < ApplicationController
     @wears = @category.wears
   end
 
+  
+
   private
 
   def set_category
