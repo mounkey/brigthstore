@@ -8,6 +8,13 @@ class WearsController < ApplicationController
   end
 
   def show
+    if current_user.present?
+      if @wear.user_id == current_user.id
+        @wear_q = 1
+      else
+        @wear_q = 0
+      end
+    end
   end
 
   def new
@@ -40,6 +47,7 @@ class WearsController < ApplicationController
     else
       render :edit
     end
+    
   end
 
   def destroy
