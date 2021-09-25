@@ -49,4 +49,7 @@ class OrdersController < ApplicationController
   def order_params
     params.require(:order).permit(:monto, :fecha, :order_detail, :order_detail_id)
   end
+
+
+  
 end
