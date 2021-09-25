@@ -28,16 +28,10 @@
                       </div>
                       <div class= "minicard col-2">
                         <div class= d-flex>
-                          <div class="container col-6">
-                            <a><%= link_to "+", order_suma_path(order_item, sel:1), class: "col-2 btn botones-carrito" %></a>
-                          </div>
-                          <div class="col-2 btn botones-carrito2">
-                            <a><%= order_item.cantidad %></a>
-                          </div>
-                            <div>
-                              <a><%= link_to "-", order_suma_path(order_item, sel:2), class: "col-2 btn botones-carrito" %></a>
-                            </div>
-                          </div>
+                          <a><%= link_to "+", order_suma_path(order_item, sel:1), class: "col-2 btn botones-carrito" %></a>
+                          <a id= "botonorillaverde" ><%= order_item.cantidad %></a>
+                          <a><%= link_to "-", order_suma_path(order_item, sel:2), class: "col-2 btn botones-carrito" %></a>
+                        </div>
                         </div>
                         <div class="container col-10 aling-right">
                           <h3 class="carrito-price"><%=" $ #{order_item.total_price}"%></h3>
