@@ -8,7 +8,7 @@
       <div class="text-center" style="width: 310px; height:300px;">
         <% if @wear.photo.attached? %>
           <%= cl_image_tag(@wear.photo.key, width: 310, height:300 ) %>
-          <% raise %>
+          
         <% else %>
           <%= image_tag ("PNG.png"), width:120, height:40 %>
         <% end %>
