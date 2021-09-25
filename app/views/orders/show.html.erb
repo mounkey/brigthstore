@@ -15,52 +15,52 @@
                   <% end %>
                   <div class="card-product-carrito-infos">
                     <div class="row">
-                      <div class="col-6">
+                      <div class="col-10">
                         <h4><b><%= order_item.wear.marca %></b></h4>
                         <h5><p><%= order_item.wear.descripcion %></p></h5>
                         <h5><p><%= order_item.wear.talla %></p></h5>
                         <small class="carrito-price"><%= order_item.wear.valor %></small>
                       </div>
-                      <div class="col-6">
+                      <div class="col-2">
                         <div class="w-40">
-                           <%= link_to image_tag("trashverde.png", class: "carrito-trash-img"), order_order_item_path(order_item), method: :delete %>
-                        </div>
-                          <div class= "container-fluid">
-                            <div class= d-flex>
-                              <div class="minicard">
-                                <%= link_to "+", order_suma_path(order_item, sel:1), class: "btn botones-carrito" %>
-                              </div>
-                              <div class="btn botones-carrito2">
-                                <%= order_item.cantidad %>
-                              </div>
-                              <div class= "minicard-cant ">
-                                <%= link_to "-", order_suma_path(order_item, sel:2), class: "btn botones-carrito" %>
-                              </div>
-                            </div>
-                        </div>
-                        <div>
-                          <h3 class="carrito-price"><%=" $ #{order_item.total_price}"%></h3>
+                          <%= link_to image_tag("trashverde.png", class: "carrito-trash-img"), order_order_item_path(order_item), method: :delete %>
                         </div>
                       </div>
+                      <div class= "minicard col-2">
+                        <div class= d-flex>
+                          <div class="container col-6">
+                            <a><%= link_to "+", order_suma_path(order_item, sel:1), class: "col-2 btn botones-carrito" %></a>
+                          </div>
+                          <div class="col-2 btn botones-carrito2">
+                            <a><%= order_item.cantidad %></a>
+                          </div>
+                            <div>
+                              <a><%= link_to "-", order_suma_path(order_item, sel:2), class: "col-2 btn botones-carrito" %></a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="container col-10 aling-right">
+                          <h3 class="carrito-price"><%=" $ #{order_item.total_price}"%></h3>
+                        </div>
+                      </div>  
                     </div>
                   </div>
-                </div>
               </div>
             <% end %>
       <% end %>
     <% end %>
   </div>
- <div class="container pt-4">
-  <div class= "row">
-    <div class = "col-12 - col-md-12 text-right">
-      <h2 class = "carrito-price"> <%= "Total : $ #{@order_total}" %>  
-    </div>  
-  </div> 
-  <div class= "row">
-    <div class = "col-12 - col-md-12 text-right">
-      <%= link_to  "Seguir comprando", wears_path, class: "btn botones" %>
-      <%= link_to  "Pagar", order_confirm_path(Order), class: "btn botones" %>
+  <div class="container pt-4">
+    <div class= "row">
+      <div class = "col-12 - col-md-12 text-right">
+        <h2 class = "carrito-price-total"><%= "Total : $ #{@order_total}" %>  
+      </div>  
+    </div> 
+    <div class= "row">
+      <div class = "col-12 - col-md-12 text-right">
+        <%= link_to  "Seguir comprando", wears_path, class: "btn botones" %>
+        <%= link_to  "Pagar", order_confirm_path(Order), class: "btn botones" %>
+      </div>
     </div>
-  </div>
   </div>
 </div>
