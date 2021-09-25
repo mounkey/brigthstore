@@ -115,7 +115,7 @@
 .card-product-carrito {
   margin-top: 15px;
   overflow: hidden;
-  height: 200px;
+  height: auto;
   width: 100%;
   background: white;
   box-shadow: 0px 4px 4px rgba(0,0,0,0.2);
@@ -123,6 +123,7 @@
   align-items: center;
   border-radius: 20px;
   padding-top: 0px 0px 0px 25px;
+  text-transform: capitalize;
 }
 
 .carrito-img {
@@ -131,17 +132,21 @@
   object-fit: cover;
 }
 
-.carrito-trash {
-  width: 40px;
-  height: 40px;
+.carrito-trash-img {
+  width: 20px;
+  height: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
+  text-align-last: right;
 }
 
 .card-product-carrito h2 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   margin: 0;
   text-transform: capitalize;
-  line-height: 29;
+  line-height: 29px;
+  display: block;
 }
 
 .card-product-carrito p {
@@ -149,18 +154,21 @@
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
-  margin-top: 8px;
+  margin-top: 2px;
   text-transform: capitalize;
 }
 
 .card-product-carrito-infos {
   padding-left: 25px;
-  padding-top: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
   width: 95%;
 }
 
-.carrito-price{
+.carrito-price {
   color:#E5707E;
+  text-align-last: right;
+  padding-right: 75px;
 }
 
 .minicard-cant {
@@ -169,5 +177,18 @@
   border-radius: 15px;
   border: 2px;
   border-color: #A3DDCB;
+}
 
+.a {
+  text-align: center;
+  font-display: block;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 0px;
+}
+
+.carrito-price-total {
+  color:black;
+  text-align-last: right;
+  padding-right: 0px;
 }
