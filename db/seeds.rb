@@ -14,4 +14,3 @@ Category.create(nombre: "Ropa_Hombre", imagen: "picturesManbig.png")
 Category.create(nombre: "Ropa_Winter", imagen: "picturesWintersmall.png")
 Category.create(nombre: "Ofertas", imagen: "picturesSalesmall.png")
 Category.create(nombre: "Party", imagen:"picturesPartysmall.png")
-  

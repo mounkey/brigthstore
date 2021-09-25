@@ -1,6 +1,6 @@
 <br>
 <div class="container">
-  <h3 class="pb-4"><%= content_tag(:h3, "Categoría: #{@category.nombre},") %></h3>
+  <h3><strong><%= content_tag(:h3strong, "Categoria: #{@category.nombre}.") %></strong></h3>
 </div>
 <div class="container d-flex">
   <% if @wears.present? %>
@@ -9,7 +9,7 @@
       <div class="col-2 col-md-3">
         <div class="card-body">
             <% if wear.photo.attached? %>
-              <%= link_to cl_image_tag(wear.photo.key) , wear_path(wear) %> 
+              <%= link_to cl_image_tag(wear.photo.key), wear_path(wear) %> 
             <% else %>
               <%= link_to image_tag("PNG.png") , wear_path(wear) %>
             <% end %>
@@ -19,10 +19,11 @@
   <% end -%>
   <% end -%>
 </div>
-
+<br>
 <div class="container mt-3">
   <div class="row">
     <div class="col-12">
+
       <%= link_to  "Volver", categories_path, class: "btn btn-sm botones" %>
       <% if user_signed_in? %>
         <% if current_user.admin? %>
@@ -30,7 +31,7 @@
           <%= link_to  "Borrar", category_path, method: "delete", data: {confirm: "¿Estas seguro?"}, class: "btn btn-sm botones ml-2"%>
         <% end %>
       <% else %>
-      <% end %>
+      <% end %
     </div>
   </div>
 </div>
