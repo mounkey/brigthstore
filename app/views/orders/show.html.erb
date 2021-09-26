@@ -1,47 +1,48 @@
 <%= render partial: "shared/banner" %>
 <div class="container">
   <div class= "row">
+    <%= @orderitems_howmany%>
     <% Order.all.each do |order| %>
-      <% order_items = OrderItem.find_by(order: order.id) %>
+      <% order_items = OrderItem.order(:price).find_by(order: @order_art) %>
         <br/>
-          <% if(order_items != nil) %>
-            <% OrderItem.order(:price).all.each do |order_item| %>
-              <div class="col-12">
+         <div class="col-12">
                 <div class="card-product-carrito">
-                  <% if(order_item.wear.photo.attached?) %>
-                    <%= cl_image_tag(order_item.wear.photo.key,class:"carrito-img") %>
+                  <% if(order_items.wear.photo.attached?) %>
+                    <%= cl_image_tag(order_items.wear.photo.key,class:"carrito-img") %>
                   <% else %>
                     <%= image_tag("PNG.png", class: "carrito-img") %>
                   <% end %>
                   <div class="card-product-carrito-infos">
                     <div class="row">
                       <div class="col-10">
-                        <h4><b><%= order_item.wear.marca %></b></h4>
-                        <h5><p><%= order_item.wear.descripcion %></p></h5>
-                        <h5><p><%= order_item.wear.talla %></p></h5>
-                        <small class="carrito-price"><%= order_item.wear.valor %></small>
+                        <h4><b><%= order_items  .wear.marca %></b></h4>
+                        <h5><p><%= order_items.wear.descripcion %></p></h5>
+                        <h5><p><%= order_items.wear.talla %></p></h5>
+                        <small class="carrito-price"><%= order_items.wear.valor %></small>
                       </div>
                       <div class="col-2">
                         <div class="w-40">
-                          <%= link_to image_tag("trashverde.png", class: "carrito-trash-img"), order_order_item_path(order_item), method: :delete %>
+                          <%= link_to image_tag("trashverde.png", class: "carrito-trash-img"), order_order_item_path(order_items), method: :delete %>
                         </div>
                       </div>
                       <div class= "minicard col-2">
                         <div class= d-flex>
-                          <a><%= link_to "+", order_suma_path(order_item, sel:1), class: "col-2 btn botones-carrito" %></a>
-                          <a id= "botonorillaverde" ><%= order_item.cantidad %></a>
-                          <a><%= link_to "-", order_suma_path(order_item, sel:2), class: "col-2 btn botones-carrito" %></a>
+                          <a><%= link_to "+", order_suma_path(order_items, sel:1), class: "col-2 btn botones-carrito" %></a>
+                          <a id= "botonorillaverde" ><%= order_items.cantidad %></a>
+                          <a><%= link_to "-", order_suma_path(order_items, sel:2), class: "col-2 btn botones-carrito" %></a>
                         </div>
                         </div>
                         <div class="container col-10 aling-right">
-                          <h3 class="carrito-price"><%=" $ #{order_item.total_price}"%></h3>
+                          <h3 class="carrito-price"><%=" $ #{order_items.total_pric
+                          
+                          e}"%></h3>
                         </div>
                       </div>  
                     </div>
                   </div>
               </div>
-            <% end %>
-      <% end %>
+          
+      
     <% end %>
   </div>
   <div class="container pt-4">

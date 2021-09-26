@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  
+
   def home
     @ids = []
     @pics = []
@@ -11,6 +11,7 @@ class PagesController < ApplicationController
 
   def admin
     @user = current_user.admin
-    raise
+  
   end
+
 end
