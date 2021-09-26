@@ -57,6 +57,7 @@ class OrderItemsController < ApplicationController
   end
 
   def confirm
+    category_shared
     @order = Order.all
     @order_item = OrderItem.all
     @order_total  = @order_item.where(order_id: @order).sum(:total_price)
@@ -84,4 +85,14 @@ class OrderItemsController < ApplicationController
     @order_item.total_price = price
     @order_item.save
   end
+
+  def category_shared
+    @ids = []
+    @pics = []
+    Category.all.each do |c|
+      @ids << c.id
+      @pics << c.imagen
+    end
+  end
+  
 end

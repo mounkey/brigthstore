@@ -7,6 +7,13 @@ class OrdersController < ApplicationController
 
   # confirmacion
   def show
+    @currentUser = current_user.id
+    if current_order.order_items.present?
+      @orderitems_howmany = ""
+    else
+      @orderitems_howmany = "No hay Articulos en el carro de compra"
+    end
+    @order_art = Order.find_by(id: current_order.id, user_id: @currentUser)
     @order_total = @order.order_items.where(order_id: @order).sum(:total_price)
   end
 

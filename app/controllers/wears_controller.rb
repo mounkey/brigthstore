@@ -8,6 +8,7 @@ class WearsController < ApplicationController
   end
 
   def show
+    category_shared
     if current_user.present?
       if @wear.user_id == current_user.id
         @wear_q = 1
@@ -58,6 +59,7 @@ class WearsController < ApplicationController
   end
 
   def search
+    category_shared
     @keyword = params[:keyword].downcase
     @results = Wear.search_results(@keyword)
   end
@@ -71,5 +73,14 @@ class WearsController < ApplicationController
   def set_wear
     @wear = Wear.find(params[:id])
   end 
+
+  def category_shared
+    @ids = []
+    @pics = []
+    Category.all.each do |c|
+      @ids << c.id
+      @pics << c.imagen
+    end
+  end
 
 end
