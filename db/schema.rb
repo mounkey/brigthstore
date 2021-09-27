@@ -68,27 +68,18 @@ ActiveRecord::Schema.define(version: 2021_09_23_181452) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.bigint "user_id", null: false
     t.integer "monto"
-    t.date "date"
+    t.date "fecha"
     t.string "metodopago"
     t.string "address"
     t.string "city"
     t.string "state"
     t.string "country"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "status", default: 0
     t.index ["user_id"], name: "index_orders_on_user_id"
-  end
-
-  create_table "pg_search_documents", force: :cascade do |t|
-    t.text "content"
-    t.string "searchable_type"
-    t.bigint "searchable_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
   end
 
   create_table "users", force: :cascade do |t|
