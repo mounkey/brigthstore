@@ -1,0 +1,7 @@
+<%= simple_form_for @order, :html => {class: "form"} do |f| do |f| %>
+  <%= f.input :address, label: "Direccion" %>
+  <%= f.input :city, label: "Ciudad" %>
+  <%= f.input :state, label: "Region" %>
+  <%= f.input :country, label: "Pais" %>
+  <%= f.submit "Agregar Categoria", class: "btn botones" %>
+<% end %>%>
