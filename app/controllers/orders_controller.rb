@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [:destroy, :show, :update, :edit, :address]
+  before_action :set_order, only: [:destroy, :show, :update, :edit]
 
   def index
     @orders = Order.all
@@ -47,21 +47,6 @@ class OrdersController < ApplicationController
     end
   end
 
-  def address
-    @search = params["address"]
-    if @search.present?
-      @adress = @search["address"]
-      @city =  @search["city"]
-      @state = @search["state"]
-      @country = @search["contry"]
-      @order[:adress] = @adress
-      @order[:city] = @city
-      @order[:state] = @state
-      @order[:country]= @country
-      redirect_to search_path
-    end
-  end
-
   private
 
   def set_order
@@ -70,10 +55,6 @@ class OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(:monto, :fecha, :order_detail, :order_detail_id)
-  end
-
-  def order_prams2
-    params.requiere(:order).permit(:address, :city, :state, :country  )
   end
 
 end

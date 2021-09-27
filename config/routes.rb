@@ -10,7 +10,6 @@ Rails.application.routes.draw do
     resources :order_items, only: %i[new create update destroy]
     get "/order_id/:id", to: "order_items#suma", as: :suma
     get "/confirm", to:"order_items#confirm", as: :confirm
-    get "/address/:id", to:"orders#address", as: :address
   end
 
   resources :order_details, only: %i[new create update destroy]

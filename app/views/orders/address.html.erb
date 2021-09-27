@@ -1,8 +1,8 @@
 <h1> Registrar Domicilio </h1>
-<%= simple_form_for :address, url: order_ path   |f| %>
+<%= simple_form_for @orderdetails  :html => {class: 'form'} do |f| %>
   <%= f.input :address, label: "Direccion", input_html: {value: ""} %>
   <%= f.input :city, label:"Ciudad", input_html: {value: ""} %>
   <%= f.input :state, label:"Comuna", input_html: {value: ""} %>
-  <%= f.input :country, label:"Pais",  input_html: {value: ""} %>
-  <%= f.submit "Guardar", class: "btn btn-primary" %>
+  
+  <%= f.submit "Guardar", class: "btn botones" %>
 <% end %>
