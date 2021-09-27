@@ -41,6 +41,10 @@ class OrdersController < ApplicationController
     end
   end
 
+  def address
+    
+  end
+
   def destroy
     if @order.destroy
       redirect_to order_path

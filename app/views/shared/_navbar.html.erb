@@ -51,8 +51,9 @@
           </div>
           <div class= "col-2 col-md-2   col-lg-2 col-xl-2">
           <% if user_signed_in? %>
+            <%= link_to  "Prenda", new_wear_path , class: "navbar_menu" %>
             <% if current_user.admin? %>
-              <%= link_to  "Categorias", categories_url, class:"navbar_menu"%>
+              <%= link_to  "Categorias", categories_path, class:"navbar_menu"%>
             <% end %>
           <% else %>
 
