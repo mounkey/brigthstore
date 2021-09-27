@@ -8,10 +8,4 @@ class PagesController < ApplicationController
       @pics << c.imagen
     end
   end
-
-  def admin
-    @user = current_user.admin
-  
-  end
-
 end

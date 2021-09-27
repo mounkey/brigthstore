@@ -30,9 +30,9 @@
           <%= link_to "Editar",  edit_category_path, class: "btn btn-sm botones ml-2" %>
           <%= link_to "Borrar", category_path, method: "delete", data: {confirm: "¿Estas seguro?"}, class: "btn btn-sm botones ml-2" %>
         <% else %>
-          <%= link_to  "Volver", root_path, class: "btn btn-sm botones" %>
         <% end %>
       <% else %> 
+        <%= link_to  "Volver", root_path, class: "btn btn-sm botones" %>
       <% end %>
     </div>
   </div>
