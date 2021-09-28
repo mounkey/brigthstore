@@ -51,11 +51,11 @@
           </div>
           <div class= "col-1 col-md-1   col-lg-1 col-xl-1">
             <% if user_signed_in? %>
-              <%= link_to  "vende", new_wear_path , class: "btn botones" %>
+              <%= link_to  "vende", new_wear_path , class: "navbar_menu" %>
           </div>
           <div class= "col-1 col-md-1   col-lg-1 col-xl-1">
             <% if current_user.admin? %>
-              <%= link_to  "Categorias", categories_path, class:"btn botones"%>
+              <%= link_to  "Categorias", categories_path, class:"navbar_menu"%>
             <% end %>
             <% else %>
             <% end %>

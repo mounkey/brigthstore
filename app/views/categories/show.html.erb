@@ -2,10 +2,10 @@
 <div class="container">
   <h3><strong><%= content_tag(:h3strong, "Categoria: #{@category.nombre}.") %></strong></h3>
 </div>
-<div class="container d-flex">
+<div class="container">
   <% if @wears.present? %>
     <div class="row">
-    <% @wears.each do |wear| %>      
+    <% @wears.each do |wear| %> 
         <div class="col-2 col-md-2">
           <div class="card-body">
             <% if wear.photo.attached? %>
