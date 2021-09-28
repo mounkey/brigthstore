@@ -2,11 +2,11 @@
 <div class="container">
   <h3><strong><%= content_tag(:h3strong, "Categoria: #{@category.nombre}.") %></strong></h3>
 </div>
-<div class="container d-flex">
+<div class="container">
   <% if @wears.present? %>
     <div class="row">
-    <% @wears.each do |wear| %>      
-        <div class="col-2 col-md-2">
+    <% @wears.each do |wear| %> 
+        <div class="col-2 col-md-2 mt-4">
           <div class="card-body">
             <% if wear.photo.attached? %>
               <%= link_to cl_image_tag(wear.photo.key), wear_path(wear) %> 
@@ -23,7 +23,6 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col-12">
-      
       <% if user_signed_in? %>
         <% if current_user.admin? %>
           <%= link_to  "Volver", categories_path, class: "btn btn-sm botones" %>
