@@ -1,3 +1,4 @@
+<div class="container p-2" style="border-radius: 20px; background-color: white; box-shadow: 0px 4px 4px rgba(0,0,0,0.2);">
 <%= simple_form_for @wear, :html => {class: 'form'} do |f| %>
   <h6><%= f.input :marca %></h6>
   <%= f.input :talla %>
@@ -8,5 +9,6 @@
   <%= f.input :photo, as: :file %>
   <%= f.submit "Guardar Cambios", class: "btn botones" %>
   <%= link_to  "Volver", wears_path, class: "btn botones" %>
-<% end %>   
+<% end %> 
+</div>
  
